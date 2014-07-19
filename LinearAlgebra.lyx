@@ -15,6 +15,7 @@
 \usepackage{calc,graphicx,soul}
 \usepackage{wrapfig}
 \usepackage{tikz,float}
+\usetikzlibrary{matrix,arrows,positioning,decorations.pathmorphing}
 \usepackage[
   backend=biber,
   citestyle=alphabetic,
@@ -5443,6 +5444,495 @@ The rule of thumb is
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+myunit}{1 cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tikzset{node style sp/.style={draw,circle,minimum size=
+\backslash
+myunit},     
+\end_layout
+
+\begin_layout Plain Layout
+
+node style ge/.style={circle,minimum size=
+\backslash
+myunit},     
+\end_layout
+
+\begin_layout Plain Layout
+
+arrow style mul/.style={draw,sloped,midway,fill=white},     
+\end_layout
+
+\begin_layout Plain Layout
+
+arrow style plus/.style={midway,sloped,fill=white}, }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[>=latex] 
+\end_layout
+
+\begin_layout Plain Layout
+
+% les matrices 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix (A) [matrix of math nodes,%              
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes = {node style ge},%              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,%              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),nodes in empty cells] at (0,0) {%   
+\end_layout
+
+\begin_layout Plain Layout
+
+a_{11} & a_{12} & 
+\backslash
+ldots & a_{1m}  
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[node style sp] {a_{21}};%          
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+node[node style sp] {a_{22}};%          
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+ldots%          
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+node[node style sp] {a_{2m}}; 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots & 
+\backslash
+vdots & 
+\backslash
+ddots & 
+\backslash
+vdots  
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+a_{n1} & a_{n2} & 
+\backslash
+ldots & a_{nm}  
+\backslash
+
+\backslash
+ }; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [draw,below=10pt] at (A.south)      
+\end_layout
+
+\begin_layout Plain Layout
+
+{ $A$ : 
+\backslash
+textcolor{blue}{$n$ rows} $m$ columns};      
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix (B) [matrix of math nodes,%              
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes = {node style ge},%              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,%              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter =),nodes in empty cells] at (6*
+\backslash
+myunit,6*
+\backslash
+myunit) {%   
+\end_layout
+
+\begin_layout Plain Layout
+
+b_{11} & 
+\backslash
+node[node style sp] {b_{12}};%                   
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+ldots & b_{1l}  
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+b_{21} & 
+\backslash
+node[node style sp] {b_{22}};%                   
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+ldots & b_{2l}  
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots & 
+\backslash
+vdots & 
+\backslash
+ddots & 
+\backslash
+vdots  
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+b_{m1} & 
+\backslash
+node[node style sp] {b_{m2}};%                   
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+ldots & b_{ml}  
+\backslash
+
+\backslash
+ }; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [draw,above=10pt] at (B.north)      
+\end_layout
+
+\begin_layout Plain Layout
+
+{ $B$ : $m$ rows 
+\backslash
+textcolor{blue}{$l$ columns}}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+% matrice résultat 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix (C) [matrix of math nodes,%              
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes = {node style ge},%              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,%              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),nodes in empty cells] at (6*
+\backslash
+myunit,0) {%   
+\end_layout
+
+\begin_layout Plain Layout
+
+c_{11} & c_{12} & 
+\backslash
+ldots & c_{1l} 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+c_{21} & 
+\backslash
+node[node style sp,blue] {c_{22}};%                   
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+ldots & c_{2l} 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots & 
+\backslash
+vdots & 
+\backslash
+ddots & 
+\backslash
+vdots 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+c_{n1} & c_{n2} & 
+\backslash
+ldots & c_{nl} 
+\backslash
+
+\backslash
+ }; 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+% les fleches 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[blue] (A-2-1.north) -- (C-2-2.north); 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[blue] (A-2-1.south) -- (C-2-2.south); 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[blue] (B-1-2.west)  -- (C-2-2.west); 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[blue] (B-1-2.east)  -- (C-2-2.east); 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[<->,red](A-2-1) to[in=180,out=90] 
+\end_layout
+
+\begin_layout Plain Layout
+
+%	node[arrow style mul] (x) {$a_{21}
+\backslash
+times b_{12}$} (B-1-2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[<->,red](A-2-2) to[in=180,out=90] 
+\end_layout
+
+\begin_layout Plain Layout
+
+%	node[arrow style mul] (y) {$a_{22}
+\backslash
+times b_{22}$} (B-2-2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[<->,red](A-2-4) to[in=180,out=90] 
+\end_layout
+
+\begin_layout Plain Layout
+
+%	node[arrow style mul] (z) {$a_{2p}
+\backslash
+times b_{p2}$} (B-4-2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw[red,->] (x) to node[arrow style plus] {$+$} (y)% 
+\end_layout
+
+\begin_layout Plain Layout
+
+% to node[arrow style plus] {$+
+\backslash
+raisebox{.5ex}{
+\backslash
+ldots}+$} (z)% 
+\end_layout
+
+\begin_layout Plain Layout
+
+%to (C-2-2.north west);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [draw,below=10pt] at (C.south)      
+\end_layout
+
+\begin_layout Plain Layout
+
+{$ C=A
+\backslash
+times B$ : 
+\backslash
+textcolor{blue}{$n$ rows}  
+\backslash
+textcolor{blue}{$l$ columns}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 We can illustrate this as follows:
 \begin_inset Formula 
 \[
@@ -5467,6 +5957,15 @@ a_{n1} & \cdots & a_{nm}
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Note that the matrix multiplication is not commutative in general!
 \end_layout
 
@@ -6782,6 +7281,11 @@ Table[k*p.MatrixPower[P,n].pr,{n,5}]//ColumnForm
 \end_inset
 
 
+\begin_inset FormulaMacro
+\newcommand{\x}{\mathbf{x}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7952,8 +8456,8 @@ The group of invertible matrices
  
 \end_layout
 
-\begin_layout Standard
-
+\begin_layout Section
+Triangular Matrices
 \end_layout
 
 \begin_layout Definition
@@ -9013,6 +9517,120 @@ reference "Thm:Group-of-Triangular-Matrices"
 \end_inset
 
  is also a diagonal matrix.
+\end_layout
+
+\begin_layout Exercise
+Prove that a triangular matrix 
+\begin_inset Formula $A=\left[a_{ij}\right]$
+\end_inset
+
+ is invertible if and only if 
+\begin_inset Formula $a_{ii}$
+\end_inset
+
+ is invertible for each 
+\begin_inset Formula $i.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "Thm: Solution-Ux=b"
+
+\end_inset
+
+Let 
+\begin_inset Formula $A=\left[a_{ij}\right]\in R^{n,n}$
+\end_inset
+
+ be an upper triangular matrix with 
+\begin_inset Formula $a_{ii}$
+\end_inset
+
+ invertible for 
+\begin_inset Formula $i=1,\ldots,n$
+\end_inset
+
+.
+ Then the equation
+\begin_inset Formula 
+\begin{equation}
+AX=B\label{eq:2.5.4}
+\end{equation}
+
+\end_inset
+
+has a unique solution 
+\begin_inset Formula $X\in R^{n,m}$
+\end_inset
+
+ for every 
+\begin_inset Formula $B\in R^{n,m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Let the rows of 
+\begin_inset Formula $B$
+\end_inset
+
+ be denoted by 
+\begin_inset Formula $\b_{1},\b_{2}\,\ldots,\b_{n}$
+\end_inset
+
+ and those of 
+\begin_inset Formula $X$
+\end_inset
+
+ be denoted by 
+\begin_inset Formula $\x_{1,}\x_{2},\ldots,\x_{n}$
+\end_inset
+
+.
+ Equating the last row in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:2.5.4"
+
+\end_inset
+
+ we get
+\begin_inset Formula 
+\[
+a_{nn}\x_{n}=\b_{n}\quad\implies\x_{n}=a_{nn}^{-1}\cdot\b_{n}.
+\]
+
+\end_inset
+
+Equating the next row above we get
+\begin_inset Formula 
+\[
+a_{n-1,n-1}\x_{n-1}+a_{n-1,n}\x_{n}=\b_{n-1}\quad\implies\x_{n-1}=a_{n-1,n-1}^{-1}\left(\b_{n-1}-a_{n-1,n}a_{nn}^{-1}\cdot\b_{n}\right).
+\]
+
+\end_inset
+
+It is thus clear that all the rows of 
+\begin_inset Formula $X$
+\end_inset
+
+ are uniquely determined.
+\end_layout
+
+\begin_layout Exercise
+Prove Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm: Solution-Ux=b"
+
+\end_inset
+
+ for lower triangular matrices.
 \end_layout
 
 \begin_layout Section
@@ -10736,6 +11354,626 @@ The
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm] (A) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{              
+\end_layout
+
+\begin_layout Plain Layout
+
+1 &0 &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots &
+\backslash
+vdots &
+\backslash
+ddots & 
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots& 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots &
+\backslash
+vdots 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &
+\backslash
+cdots &1 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots &
+\backslash
+vdots &
+\backslash
+vdots & 
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+ddots&
+\backslash
+vdots& 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots &
+\backslash
+vdots 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &
+\backslash
+cdots &
+\backslash
+lambda &
+\backslash
+cdots &1 &
+\backslash
+cdots &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots &
+\backslash
+vdots &
+\backslash
+vdots & 
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots& 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ddots&
+\backslash
+vdots&
+\backslash
+vdots &
+\backslash
+vdots 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &1 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &
+\backslash
+cdots & 0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &0 &1 
+\backslash
+
+\backslash
+ }; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[above=10pt] at (A-1-5.north){$i$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[above=10pt] at (A-1-7.north){$j$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1cm] at (A-4-1.west){$i$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1cm] at (A-6-1.west){$j$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1cm] at (A-5-1.west){$G_{ij}{
+\backslash
+left(
+\backslash
+lambda
+\backslash
+right)}=$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm] (A) 
+\end_layout
+
+\begin_layout Plain Layout
+
+{              
+\end_layout
+
+\begin_layout Plain Layout
+
+1 &0 &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots &
+\backslash
+vdots &
+\backslash
+ddots & 
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots& 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots &
+\backslash
+vdots 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &
+\backslash
+cdots &1 &
+\backslash
+cdots &
+\backslash
+lambda &
+\backslash
+cdots &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots &
+\backslash
+vdots &
+\backslash
+vdots & 
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+ddots&
+\backslash
+vdots& 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots &
+\backslash
+vdots 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &1 &
+\backslash
+cdots &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+vdots &
+\backslash
+vdots &
+\backslash
+vdots & 
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots&
+\backslash
+vdots& 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ddots&
+\backslash
+vdots&
+\backslash
+vdots &
+\backslash
+vdots 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &1 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &
+\backslash
+cdots & 0 &
+\backslash
+cdots &0 &
+\backslash
+cdots &0 &0 &1 
+\backslash
+
+\backslash
+ }; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[above=10pt] at (A-1-5.north){$i$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[above=10pt] at (A-1-7.north){$j$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1cm] at (A-4-1.west){$i$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1cm] at (A-6-1.west){$j$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1cm] at (A-5-1.west){$G_{ij}{
+\backslash
+left(
+\backslash
+lambda
+\backslash
+right)}^T=$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Multiplying a matrix 
 \begin_inset Formula $A\in R^{n,m}$
 \end_inset
@@ -10766,7 +12004,7 @@ Multiplying a matrix
 
 .
  The multiplication from the left with the upper triangular matrix 
-\begin_inset Formula $G_{ij}^{T}\left(\lambda\right)$
+\begin_inset Formula $\left(G_{ij}\left(\lambda\right)\right)^{T}$
 \end_inset
 
  causes 
@@ -10810,7 +12048,7 @@ A=\begin{bmatrix}1 & 2 & 3\\
 G_{23}\left(-1\right)A=\begin{bmatrix}1 & 2 & 3\\
 4 & 5 & 6\\
 3 & 3 & 3
-\end{bmatrix},\quad G_{23}^{T}\left(-1\right)A=\begin{bmatrix}\begin{array}{rrr}
+\end{bmatrix},\quad\left(G_{23}\left(-1\right)\right)^{T}A=\begin{bmatrix}\begin{array}{rrr}
 1 & 2 & 3\\
 -3 & -3 & -3\\
 7 & 8 & 9
@@ -10962,6 +12200,143 @@ E_{ji}^{2}\e_{k}=0\ \text{for all }k.
 
 \end_layout
 
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "Lemma:P-times-G"
+
+\end_inset
+
+For any permutation matrix
+\begin_inset Formula 
+\[
+P_{\sigma}=\left[\e_{\sigma\left(1\right)},\e_{\sigma\left(2\right)},\ldots\e_{\sigma\left(n\right)}\right]\in R^{n,n}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $G_{ij}\left(\lambda\right)$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+G_{ij}\left(\lambda\right)P_{\sigma}=P_{\sigma}G_{\sigma^{-1}\left(i\right),\sigma^{-1}\left(j\right)}\left(\lambda\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $\sigma\left(k\right)=i$
+\end_inset
+
+ so that 
+\begin_inset Formula $k=\sigma^{-1}\left(i\right)$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\begin{eqnarray*}
+P_{\sigma}\e_{l} & = & \e_{\sigma\left(l\right)}\\
+G_{ij}\left(\lambda\right)P_{\sigma}\e_{l} & = & G_{ij}\left(\lambda\right)\e_{\sigma\left(l\right)}\\
+ & = & \begin{cases}
+\e_{\sigma\left(l\right)} & \text{if }l\neq k\\
+\e_{i}+\lambda\e_{j} & \text{if }l=k.
+\end{cases}
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+G_{\sigma^{-1}\left(i\right),\sigma^{-1}\left(j\right)}\left(\lambda\right)\e_{l}=\begin{cases}
+\e_{\sigma^{-1}\left(i\right)}+\lambda\e_{\sigma^{-1}\left(j\right)} & \text{if }l=k\\
+\e_{l} & \text{if }l\neq k
+\end{cases}
+\]
+
+\end_inset
+
+so
+\begin_inset Formula 
+\[
+P_{\sigma}G_{\sigma^{-1}\left(i\right),\sigma^{-1}\left(j\right)}\left(\lambda\right)\e_{l}=\begin{cases}
+\e_{\sigma\left(l\right)} & \text{if }l\neq k\\
+\e_{i}+\lambda\e_{j} & \text{if }l=k.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula $P_{\sigma}G_{ij}\left(\lambda\right)=G_{\sigma\left(i\right),\sigma\left(j\right)}\left(\lambda\right)P_{\sigma}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will use these results in the section on 
+\begin_inset Formula $LU$
+\end_inset
+
+ decomposition especially when 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is a transposition.
+\end_layout
+
+\begin_layout Corollary
+If 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is a transposition which does not move 
+\begin_inset Formula $i$
+\end_inset
+
+ then
+\begin_inset Formula 
+\[
+P_{\sigma}G_{ij}\left(\lambda\right)=G_{i,\sigma\left(j\right)}\left(\lambda\right)P_{\sigma}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise
+Compute the products
+\begin_inset Formula 
+\[
+G_{i,i}\left(\lambda_{i}\right)G_{i,i+1}\left(\lambda_{i+1}\right)\cdot\cdot\cdot G_{i,n}\left(\lambda_{n}\right)
+\]
+
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+G_{i,n}\left(\lambda_{n}\right)\cdot\cdot\cdot G_{i,i+1}\left(\lambda_{i+1}\right)G_{i,i}\left(\lambda_{i}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 The Echelon form and Gaussian Elimination
 \end_layout
@@ -11098,6 +12473,318 @@ We assume that
  This fact is generally not given for matrices over a ring.
 \end_layout
 
+\begin_layout Definition
+A 
+\series bold
+non–zero row
+\series default
+ of a matrix is defined to be a row that does not contain all zeros.
+ 
+\end_layout
+
+\begin_layout Definition
+The 
+\series bold
+leading entry
+\series default
+ of a non–zero row of a matrix is defined to be the leftmost non–zero entry
+ in the row.
+\end_layout
+
+\begin_layout Example
+For example, if we have the matrix
+\begin_inset Formula 
+\[
+\begin{bmatrix}0 & 0 & 4 & 1 & 0\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 3
+\end{bmatrix},
+\]
+
+\end_inset
+
+ then the first row is a non–zero row with leading entry 4, the second row
+ is a zero row, and the third row is a non–zero row with leading entry 3.
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "Def:Echelon-Form"
+
+\end_inset
+
+A matrix is said to have 
+\series bold
+echelon form
+\series default
+ (or 
+\series bold
+row echelon form
+\series default
+) if it has the following properties: 
+\end_layout
+
+\begin_layout Enumerate
+All non–zero rows are above any zero rows.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Each leading entry of a each non–zero row is in a column to the right of
+ the leading entry of the row above it.
+ 
+\end_layout
+
+\begin_layout Enumerate
+In each column that contains a leading entry, each entry below the leading
+ entry is 0.
+ 
+\begin_inset Newline newline
+\end_inset
+
+If a matrix has row echelon form and also satisfies the following two conditions
+, then the matrix is said to have 
+\series bold
+reduced echelon form
+\series default
+ (or 
+\series bold
+reduced row echelon form
+\series default
+): 
+\end_layout
+
+\begin_layout Enumerate
+The leading entry in each non–zero row is 1.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Each leading 1 is the only non–zero entry in its column.
+\end_layout
+
+\begin_layout Exercise
+Decide whether or not each of the following matrices has row echelon form.
+\begin_inset Newline newline
+\end_inset
+
+For each that does have row echelon form, decide whether or not it also
+ has reduced row echelon form.
+\begin_inset Newline newline
+\end_inset
+
+If it is not in an echelon form state which property in the definition is
+ violated.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\begin{bmatrix}0 & 0 & 4 & 1 & 0\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 3
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\begin{bmatrix}1 & 1 & 0 & 1\\
+0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\begin{bmatrix}1 & 1 & 0 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 1 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\begin{bmatrix}1 & 0 & 0 & 0\\
+1 & 1 & 0 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 1 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\begin{bmatrix}0 & 1 & 1 & 1 & 1\\
+0 & 0 & 2 & 2 & 2\\
+0 & 0 & 0 & 0 & 3\\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "75col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+Mathematica Code
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline false
+status collapsed
+
+\begin_layout Plain Layout
+
+RowReduce[{{3, 1, a}, {2, 1, b}}]
+\end_layout
+
+\begin_layout Plain Layout
+
+{{1, 0, a - b}, {0, 1, -2 a + 3 b}}
+\end_layout
+
+\begin_layout Plain Layout
+
+MatrixForm[%]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\begin{array}{ccc}
+1 & 0 & a-b\\
+0 & 1 & 3b-2a
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+RowReduce[{ {1, 2, 3}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	    {4, 5, 6}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	    {7, 8, 9}}
+\end_layout
+
+\begin_layout Plain Layout
+
+] // MatrixForm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\begin{array}{ccr}
+1 & 0 & -1\\
+0 & 1 & 2\\
+0 & 0 & 0
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+RowReduce[{ {1, 2, 3, 1, 0, 0}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	    {4, 5, 6, 0, 1, 0}, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	    {7, 8, 9, 0, 0, 1}}
+\end_layout
+
+\begin_layout Plain Layout
+
+] // MatrixForm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\begin{array}{ccrcrr}
+1 & 0 & -1 & 0 & -\frac{8}{3} & \frac{5}{3}\\
+0 & 1 & 2 & 0 & \frac{7}{3} & -\frac{4}{3}\\
+0 & 0 & 0 & 1 & -2 & 1
+\end{array}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Theorem
 \begin_inset CommandInset label
 LatexCommand label
@@ -11130,13 +12817,217 @@ C\,:=S_{t}\cdot\cdot\cdot S_{1}A
 \begin_inset Formula $C$
 \end_inset
 
- has the form 
-\begin_inset Formula 
-\[
-\]
+ has the form
+\end_layout
+
+\begin_layout Theorem
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &1 &* &0 &0 &* &* &0 &0 &* &* 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &1 &0 &* &* &0 &0 &* &* 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &1 &* &* &0 &0 &* &* 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &1 &0 &* &* 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &* &* 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[blue,very thick] {(A-1-3.north west) -- (A-1-3.south west) 
+\end_layout
+
+\begin_layout Plain Layout
+
+--(A-1-5.south west) -- (A-2-5.south west) -- (A-2-6.south west) 
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-3-6.south west) -- (A-3-9.south west)-- (A-4-9.south west) 
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-4-10.south west) -- (A-5-10.south west)-- (A-5-12.south east)}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-3.north) {$j_1$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-5.north) {$j_2$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-6.north) {$j_3$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-9.north) {$j_4$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-10.north) {$j_5$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [below=10pt] at (A.south){  
+\backslash
+textbf{Reduced Row Echelon Form}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Theorem
 Here 
 \begin_inset Formula $\star$
 \end_inset
@@ -11156,7 +13047,7 @@ Here
 \end_inset
 
  (the ``steps'' of the staircase normal form), where 
-\begin_inset Formula $1\le j_{1}<\cdots<jr\le m$
+\begin_inset Formula $1\le j_{1}<\cdots<j_{r}\le m$
 \end_inset
 
  and 
@@ -11172,14 +13063,19 @@ Here
 \end_inset
 
  for 
-\begin_inset Formula $1\le i\le r$
+\begin_inset Formula $r<i\le n$
 \end_inset
 
  and 
-\begin_inset Formula $1\le j\le j_{i}$
+\begin_inset Formula $1\le j\le m$
 \end_inset
 
-,
+, (i.e.
+ all the rows beyond 
+\begin_inset Formula $r$
+\end_inset
+
+ are zero)
 \end_layout
 
 \begin_layout Theorem
@@ -11188,14 +13084,22 @@ Here
 \end_inset
 
  for 
-\begin_inset Formula $r<i\le n$
+\begin_inset Formula $1\le i\le r$
 \end_inset
 
  and 
-\begin_inset Formula $1\le j\le m$
+\begin_inset Formula $1\le j<j_{i}$
 \end_inset
 
-,
+, (i.e., all entries in row 
+\begin_inset Formula $i$
+\end_inset
+
+ to the left of column 
+\begin_inset Formula $j_{i}$
+\end_inset
+
+ are zero)
 \end_layout
 
 \begin_layout Theorem
@@ -11211,7 +13115,19 @@ Here
 \begin_inset Formula $j_{i}$
 \end_inset
 
- are zero.
+ are zero 
+\end_layout
+
+\begin_layout Theorem
+(i.e., the first non-zero entry in each of the first 
+\begin_inset Formula $r$
+\end_inset
+
+ rows is 1 and is in column 
+\begin_inset Formula $j_{i}$
+\end_inset
+
+.)
 \end_layout
 
 \begin_layout Theorem
@@ -11229,10 +13145,1499 @@ If
 
 .
  In this case the inverse is given by 
-\begin_inset Formula $A^{-1}=S_{t}\cdot\cdot\cdot S_{1}$
+\begin_inset Formula $A^{-1}=S_{1}^{-1}\cdot\cdot\cdot S_{t}^{-1}$
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $A=0$
+\end_inset
+
+, we set 
+\begin_inset Formula $t=1,\, S_{1}=I_{n}$
+\end_inset
+
+ and we are done.
+ 
+\end_layout
+
+\begin_layout Proof
+So let 
+\begin_inset Formula $A\neq0$
+\end_inset
+
+ and let 
+\begin_inset Formula $j_{1}$
+\end_inset
+
+ be the index of the first column of
+\begin_inset Formula 
+\[
+A^{\left(1\right)}=\left[a_{ij}^{\left(1\right)}\right]:=A,
+\]
+
+\end_inset
+
+which is non-zero.
+ Let 
+\begin_inset Formula $a_{i_{1},j_{1}}^{\left(1\right)}$
+\end_inset
+
+ be the first element in this column which is not zero, i.e., 
+\begin_inset Formula $A^{\left(1\right)}$
+\end_inset
+
+ has the form
+\end_layout
+
+\begin_layout Proof
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+ & & &0 & & &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &
+\backslash
+vdots & & &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &0 & & &  
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+0& & &a_{i_1,j_1}^{(1)} & &* & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &* & & &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &
+\backslash
+vdots & & &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &* & & &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-3.north east)--(A-7-3.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-5.north west)--(A-7-5.south west);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left=25pt] at (A-4-1) {$A^{
+\backslash
+left(1
+\backslash
+right)}=$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=10pt] at (A-1-4) {$j_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+We now proceed as follows: First (permute) we interchange the rows 
+\begin_inset Formula $i_{1}$
+\end_inset
+
+ and 1 (if 
+\begin_inset Formula $i_{1}>1$
+\end_inset
+
+).
+ Then we normalize the new first row, i.e., we multiply it by 
+\begin_inset Formula $\left(a_{i_{1},j_{1}}^{\left(1\right)}\right)^{-1}.$
+\end_inset
+
+ Finally, we eliminate below the first entry in the column 
+\begin_inset Formula $j_{1}$
+\end_inset
+
+.
+ Exchange and normalizing leads to
+\end_layout
+
+\begin_layout Proof
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+& & & &1 & & &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& & & &
+\backslash
+overline{a}_{2,j_1}^{(1)} & & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 0&& &
+\backslash
+vdots & &*& &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& && &
+\backslash
+vdots & && &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&& & &
+\backslash
+overline{a}_{n,j_1}^{(1)} & & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-4.north east)--(A-5-4.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-6.north west)--(A-5-6.south west);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=25pt] at (A-3-1)
+\end_layout
+
+\begin_layout Plain Layout
+
+{$
+\backslash
+overline{A}^{
+\backslash
+left(1
+\backslash
+right)}=
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+left[
+\backslash
+overline{a}_{ij}^{
+\backslash
+left(1
+\backslash
+right)}
+\backslash
+right]
+\end_layout
+
+\begin_layout Plain Layout
+
+:=M_{1}
+\backslash
+left(
+\backslash
+left(a_{i_{1},j_{1}}^{
+\backslash
+left(1
+\backslash
+right)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right)^{-1}
+\backslash
+right)P_{1,i_{1}}A^{
+\backslash
+left(1
+\backslash
+right)}=$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=10pt] at (A-1-5) {$j_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Now we have to eliminate the entries below the 1 in the column 
+\begin_inset Formula $j_{1}$
+\end_inset
+
+.
+ This is done by left multipliying 
+\begin_inset Formula $\overline{A}^{\left(1\right)}$
+\end_inset
+
+with the matrices
+\begin_inset Formula 
+\[
+G_{1,n}\left(-\overline{a}_{n,j_{1}}^{\left(1\right)}\right),\ldots,G_{1,2}\left(-\overline{a}_{2,j_{1}}^{\left(1\right)}\right).
+\]
+
+\end_inset
+
+This yields
+\end_layout
+
+\begin_layout Proof
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0& 
+\backslash
+cdots& 0 &1 & &* &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0& 
+\backslash
+cdots& 0 &0 & & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &
+\backslash
+vdots  &&A^{(2)} &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &
+\backslash
+vdots  &&&  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0& 
+\backslash
+cdots& 0 &0& & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-4.north west)--(A-5-4.south west);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-4.north east)--(A-5-4.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=25pt] at (A-3-1)
+\end_layout
+
+\begin_layout Plain Layout
+
+{$S_1A^{(1)}=$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=10pt] at (A-1-4) {$j_1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+with
+\begin_inset Formula 
+\[
+S_{1}:=G_{1,n}\left(-\overline{a}_{n,j_{1}}^{\left(1\right)}\right)\cdot\cdot\cdot G_{1,2}\left(-\overline{a}_{2,j_{1}}^{\left(1\right)}\right)M_{1}\left(\left(a_{i_{1},j_{1}}^{\left(1\right)}\right)^{-1}\right)P_{1,i_{1}}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\[
+A^{\left(2\right)}=\left[a_{ij}^{\left(2\right)}\right]\ \text{with }i=2,\ldots,n,\, j=j_{1}+1,\ldots,m,
+\]
+
+\end_inset
+
+i.e., we preserve the indices of the ``big'' matrix 
+\begin_inset Formula $A^{\left(1\right)}$
+\end_inset
+
+ in the ``smaller'' matrix 
+\begin_inset Formula $A^{\left(2\right)}$
+\end_inset
+
+.
+ Note that the elimination involves 
+\begin_inset Formula $n-1$
+\end_inset
+
+ steps in the begining.
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $A^{\left(2\right)}=\left[\ \right]$
+\end_inset
+
+ or 
+\begin_inset Formula $A^{\left(2\right)}=0$
+\end_inset
+
+ we are done, then 
+\begin_inset Formula $C:=S_{1}A^{\left(1\right)}$
+\end_inset
+
+is the echelon form.
+ In this case 
+\begin_inset Formula $r=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+If at least one entry of the matrix 
+\begin_inset Formula $A^{\left(2\right)}$
+\end_inset
+
+ is not equal to zero, we perform the above described steps for the matrix
+ 
+\begin_inset Formula $A^{\left(2\right)}$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $k=2,3,\ldots$
+\end_inset
+
+ the matrices 
+\begin_inset Formula $S_{k}$
+\end_inset
+
+ are recursively defined by
+\begin_inset Formula 
+\[
+S_{k}=\begin{bmatrix}I_{k-1} & 0\\
+0 & \overline{S}_{k}
+\end{bmatrix}
+\]
+
+\end_inset
+
+with
+\end_layout
+
+\begin_layout Proof
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0& 
+\backslash
+cdots& 0 &1 & &* &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0& 
+\backslash
+cdots& 0 &0 & & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &
+\backslash
+vdots  &&A^{(k+1)} &  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& & &
+\backslash
+vdots  &&&  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0& 
+\backslash
+cdots& 0 &0& & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-4.north west)--(A-5-4.south west);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-4.north east)--(A-5-4.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=25pt] at (A-3-1)
+\end_layout
+
+\begin_layout Plain Layout
+
+{$
+\backslash
+overline{S}_kA^{(k)}=$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=10pt] at (A-1-4) {$j_k$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+The matrix 
+\begin_inset Formula $S_{k}$
+\end_inset
+
+, is constructed analogous to 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+: First, we identify the first column 
+\begin_inset Formula $j_{k}$
+\end_inset
+
+ of 
+\begin_inset Formula $A^{\left(k\right)}$
+\end_inset
+
+, which does not consist of all zeros as well as the first entry 
+\begin_inset Formula $a_{i_{k},j_{k}}^{(k)}$
+\end_inset
+
+in this column, that is not equal to zero.
+ Then swapping and normalizing gives the matrix
+\begin_inset Formula 
+\[
+\overline{A}^{\left(k\right)}=\left[\overline{a}_{ij}^{\left(k\right)}\right]:=M_{k}\left(\left(a_{i_{k},j_{k}}^{(k)}\right)^{-1}\right)P_{k,i_{k}}A^{\left(k\right)}
+\]
+
+\end_inset
+
+and it follows that
+\begin_inset Formula 
+\[
+\overline{S}_{k}=G_{k,n}\left(-\overline{a}_{n,j_{k}}^{\left(k\right)}\right)\cdot\cdot\cdot G_{k,k+1}\left(-\overline{a}_{k+1,j_{k}}^{\left(k\right)}\right)M_{k}\left(\left(a_{i_{k},j_{k}}^{(k)}\right)^{-1}\right)P_{k,i_{k}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Again observe that the elimination involves 
+\begin_inset Formula $n-k$
+\end_inset
+
+ steps at the 
+\begin_inset Formula $k$
+\end_inset
+
+-th step.
+ Moreover the matrix 
+\begin_inset Formula $G_{k,n}\left(-\overline{a}_{n,j_{k}}^{\left(k\right)}\right)\cdot\cdot\cdot G_{k,k+1}\left(-\overline{a}_{k+1,j_{k}}^{\left(k\right)}\right)M_{k}\left(\left(a_{i_{k},j_{k}}^{(k)}\right)^{-1}\right)$
+\end_inset
+
+ has the form
+\begin_inset Formula 
+\[
+\begin{bmatrix}1\\
+ & \ddots\\
+ &  & 1\\
+ &  &  & s_{k,k}\\
+ &  &  & s_{k+1,k} & 1\\
+ &  &  & \vdots &  & \ddots\\
+ &  &  & s_{n,k} &  &  & 1
+\end{bmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Here we must note that the elementary matrices formed in the product for
+ 
+\begin_inset Formula $\overline{S}_{k}$
+\end_inset
+
+ are ofcourse not 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrices, but have the same size as 
+\begin_inset Formula $A^{\left(k\right)}$
+\end_inset
+
+.
+ However, one sees immediately that 
+\begin_inset Formula $S_{k}$
+\end_inset
+
+ is again a product of elementary matrices, all of the form
+\begin_inset Formula 
+\[
+\begin{bmatrix}I_{k-1} & 0\\
+0 & T
+\end{bmatrix}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $T$
+\end_inset
+
+ is an elementary matrix of smaller order.
+\end_layout
+
+\begin_layout Proof
+If we continue this process inductively, it stops after 
+\begin_inset Formula $r\le\min\left\{ n,m\right\} $
+\end_inset
+
+ steps when either 
+\begin_inset Formula $A^{\left(r+1\right)}=0$
+\end_inset
+
+, or 
+\begin_inset Formula $A^{\left(r+1\right)}=\left[\ \right]$
+\end_inset
+
+.
+ After 
+\begin_inset Formula $r$
+\end_inset
+
+ steps we get the row echelon form
+\end_layout
+
+\begin_layout Proof
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &1 &* &* &* &* &* &* &* &* &* 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &1 &* &* &* &* &* &* &* 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &1 &* &* &* &* &* &* 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &1 &* &* &* 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &1 &* &* 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &1 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[blue,very thick] {(A-1-3.north west) 
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-1-3.south west) --(A-1-5.south west) 
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-2-5.south west) -- (A-2-6.south west) 
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-3-6.south west) -- (A-3-9.south west)
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-4-9.south west) -- (A-4-10.south west) 
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-5-10.south west)-- (A-5-12.south west)
+\end_layout
+
+\begin_layout Plain Layout
+
+--(A-6-12.south west)--(A-6-12.south east)}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-3.north) {$j_1$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-5.north) {$j_2$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-6.north) {$j_3$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node [above=8pt] at (A-1-9.north) {$j_4$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-10.north) {$j_r-1$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above=8pt] at (A-1-12.north) {$j_r$}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left=25pt] at (A-5-1.west)
+\end_layout
+
+\begin_layout Plain Layout
+
+{$S_rS_{r-1}
+\backslash
+cdot
+\backslash
+cdot
+\backslash
+cdot S_1 A=$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [below=10pt] at (A.south){  
+\backslash
+textbf{Row Echelon Form}};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+By construction, the ones standing in echelon form above are in the positions
+\begin_inset Formula 
+\[
+\left(1,\, j_{1}\right),\left(2,\, j_{2}\right),\ldots,\left(r,\, j_{r}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $r=1$
+\end_inset
+
+ the matrix 
+\begin_inset Formula $S_{1}A^{\left(1\right)}$
+\end_inset
+
+ is in reduced echelon form as shown above.
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $r>1$
+\end_inset
+
+, in general there will be non-zero entries above the ones in the columns
+ 
+\begin_inset Formula $j_{2,}\ldots,j_{r}$
+\end_inset
+
+ which must be eliminated.
+ For this purpose, we denote the echelon matrix by 
+\begin_inset Formula $R^{\left(1\right)}=\left[r_{ij}^{\left(1\right)}\right]$
+\end_inset
+
+ i.e.,
+\begin_inset Formula 
+\[
+R^{\left(1\right)}=S_{r}S_{r-1}\cdot\cdot\cdot S_{1}A,
+\]
+
+\end_inset
+
+and construct the matrices 
+\begin_inset Formula $R^{\left(k\right)}$
+\end_inset
+
+ for 
+\begin_inset Formula $k=2,\ldots,r$
+\end_inset
+
+ recursively by
+\begin_inset Formula 
+\[
+R^{\left(k\right)}=\left[r_{ij}^{\left(k\right)}\right]:=S_{r+k-1}R^{\left(k-1\right)},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+S_{r+k-1}:=\left(G_{1,k}\left(-r_{1,,j_{k}}^{\left(k-1\right)}\right)\right)^{T}\cdot\cdot\cdot\left(G_{k-1,k}\left(-r_{k-1,,j_{k}}^{\left(k-1\right)}\right)\right)^{T}.
+\]
+
+\end_inset
+
+Note that there are exactly 
+\begin_inset Formula $k-1$
+\end_inset
+
+ elementary matrices in the product above.
+ The effect of left multiplication on 
+\begin_inset Formula $R^{\left(k\right)}$
+\end_inset
+
+ is that all the entries in the coulumn 
+\begin_inset Formula $j_{k}$
+\end_inset
+
+ which are above the 1 are reduced to zero.
+ Since there are exactly 
+\begin_inset Formula $k-1$
+\end_inset
+
+ such entries we need 
+\begin_inset Formula $k-1$
+\end_inset
+
+ elementary matrix.
+ Also keep in mind that at the 
+\begin_inset Formula $k$
+\end_inset
+
+-th step of the staircase we are at the 
+\begin_inset Formula $k$
+\end_inset
+
+-th row.
+\end_layout
+
+\begin_layout Proof
+For 
+\begin_inset Formula $t:=2r-1$
+\end_inset
+
+ the matrix 
+\begin_inset Formula $C:=S_{t}S_{t-1}\cdot\cdot\cdot S_{1}A$
+\end_inset
+
+ will be in a row reduced echelon form.
+\end_layout
+
+\begin_layout Proof
+Let 
+\begin_inset Formula $n=m$
+\end_inset
+
+ and 
+\begin_inset Formula $C:=S_{t}S_{t-1}\cdot\cdot\cdot S_{1}A$
+\end_inset
+
+ be in reduced echelon form.
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ is invertible, then 
+\begin_inset Formula $C$
+\end_inset
+
+ is a product of invertible matrices and is therefore invertible.
+ The equations
+\begin_inset Formula 
+\[
+CC^{-1}=I_{n}=C^{-1}C
+\]
+
+\end_inset
+
+ show that 
+\begin_inset Formula $C$
+\end_inset
+
+ cannot have any zero row or zero column.
+ Thus 
+\begin_inset Formula $C$
+\end_inset
+
+ must be the identity matrix 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+On the other hand if 
+\begin_inset Formula $C=I_{n}$
+\end_inset
+
+ then 
+\begin_inset Formula 
+\[
+S_{t}S_{t-1}\cdot\cdot\cdot S_{1}A=I_{n}
+\]
+
+\end_inset
+
+ and since a product of elementary matrices is invertible, each 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+ is invertible so 
+\begin_inset Formula $A$
+\end_inset
+
+ is invertible and
+\begin_inset Formula 
+\[
+A^{-1}=S_{1}^{-1}S_{2}^{-1}\cdot\cdot\cdot S_{t}^{-1}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Example
@@ -11258,9 +14663,1208 @@ Transform the matrix below in
 
 \series bold
 Soln.
+ Step 1
+\end_layout
 
-\series default
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 & 
+\backslash
+dfrac{1}{2} & 
+\backslash
+dfrac{3}{2} & 
+\backslash
+dfrac{3}{2}  
+\backslash
+
+\backslash
  
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &2 & 0 &1 &1 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &2 & 0 &1 &1 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick,->] (-4.75,0.2)--(-3.0,.2);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw [blue, thick] (A-1-4.north east)--(A-5-4.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=25pt] at (A-1-1){$j_1=2,
+\backslash
+ i_1=1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=20pt] at (A-2-1) {$
+\backslash
+longrightarrow$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left=1.6cm] at (A-2-1.south west) {$M_{1}
+\backslash
+left(
+\backslash
+frac{1}{2}
+\backslash
+right)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 & 
+\backslash
+dfrac{1}{2} & 
+\backslash
+dfrac{3}{2} & 
+\backslash
+dfrac{3}{2}  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &2 & 0 &1 &1 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & -1 &-2 &-2 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick,->] (-5,0.2)--(-3.25,.2);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw [blue, thick] (A-1-4.north east)--(A-5-4.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=25pt] at (A-1-1){$j_1=2,
+\backslash
+ i_1=1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=20pt] at (A-2-1) {$
+\backslash
+longrightarrow$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1.15cm] at (A-2-1.south west) {$G_{13}
+\backslash
+left(-2
+\backslash
+right)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 & 
+\backslash
+dfrac{1}{2} & 
+\backslash
+dfrac{3}{2} & 
+\backslash
+dfrac{3}{2}  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & -1 &-2 &-2 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & -1 &-2 &-2 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick,->] (-5,0.2)--(-3.25,.2);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw [blue, thick] (A-1-4.north east)--(A-5-4.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=25pt] at (A-1-1){$j_1=2,
+\backslash
+ i_1=1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=20pt] at (A-2-1) {$
+\backslash
+longrightarrow$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1.15cm] at (A-2-1.south west) {$G_{12}
+\backslash
+left(-2
+\backslash
+right)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 & 
+\backslash
+dfrac{1}{2} & 
+\backslash
+dfrac{3}{2} & 
+\backslash
+dfrac{3}{2}  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & 1 &2 &2 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & -1 &-2 &-2 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick,->] (-5.25,0.2)--(-3.5,.2);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw [blue, thick] (A-1-4.north east)--(A-5-4.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=25pt] at (A-1-1){$j_2=3,
+\backslash
+ i_2=2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=20pt] at (A-2-1) {$
+\backslash
+longrightarrow$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left=1.6cm] at (A-2-1.south west) {$M_{2}
+\backslash
+left(-1
+\backslash
+right)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 & 
+\backslash
+dfrac{1}{2} & 
+\backslash
+dfrac{3}{2} & 
+\backslash
+dfrac{3}{2}  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & 1 &2 &2 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & 0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick,->] (-5,0.2)--(-3.25,.2);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+draw [blue, thick] (A-1-4.north east)--(A-5-4.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=25pt] at (A-1-1){$j_1=2,
+\backslash
+ i_1=1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=20pt] at (A-2-1) {$
+\backslash
+longrightarrow$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1.75cm] at (A-2-1.south west) {$G_{23}
+\backslash
+left(1
+\backslash
+right)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 & 0 & 
+\backslash
+dfrac{1}{2} & 
+\backslash
+dfrac{1}{2}  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & 1 &2 &2 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & 0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick,->] (-5,0.2)--(-3.25,.2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-2.north west)--(A-1-2.south west)
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-1-3.south west)--(A-2-3.south west)--(A-2-5.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=25pt] at (A-1-1){$j_1=2,
+\backslash
+ i_1=1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+node[left=20pt] at (A-2-1) {$
+\backslash
+longrightarrow$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node[left=1.15cm] at (A-2-1.south west) {$G_{12}{
+\backslash
+left(-
+\backslash
+frac{1}{2}
+\backslash
+right)}^T$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+LU Decomposition
+\end_layout
+
+\begin_layout Standard
+The echelon form of a matrix 
+\begin_inset Formula $A\in\mathbb{F}^{n,n}$
+\end_inset
+
+ leads to the so-called 
+\begin_inset Formula $LU$
+\end_inset
+
+
+\emph on
+-decomposition
+\emph default
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "Thm:LU-Decomposition"
+
+\end_inset
+
+For every matrix 
+\begin_inset Formula $A\in\mathbb{F}^{n,n}$
+\end_inset
+
+ there exists a permutation matrix 
+\begin_inset Formula $P\in\mathbb{F}^{n,n}$
+\end_inset
+
+, a lower triangular matrix 
+\begin_inset Formula $L\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ with 1's on the diagonal and an upper triangular matrix 
+\begin_inset Formula $U\in\mathbb{F}^{n,n}$
+\end_inset
+
+, such that 
+\begin_inset Formula $A=PLU$
+\end_inset
+
+.
+ The matrix 
+\begin_inset Formula $U$
+\end_inset
+
+ is invertible if and only if 
+\begin_inset Formula $A$
+\end_inset
+
+ is invertible.
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $A\in\mathbb{F}^{n,n}$
+\end_inset
+
+, the echelon form for 
+\begin_inset Formula $A$
+\end_inset
+
+ can be expressed as 
+\begin_inset Formula 
+\[
+S_{n}\cdot\cdot\cdot S_{1}A=\widetilde{U}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\widetilde{U}$
+\end_inset
+
+ is an upper triangular matrix.
+ If 
+\begin_inset Formula $r<n$
+\end_inset
+
+ we set 
+\begin_inset Formula $S_{n}=S_{n-1}=\cdots=S_{r+1}=I_{n}$
+\end_inset
+
+.
+ Since the matrices 
+\begin_inset Formula $S_{1},\ldots,S_{n}$
+\end_inset
+
+ are invertible 
+\begin_inset Formula $\widetilde{U}$
+\end_inset
+
+ will be invertible if and only if 
+\begin_inset Formula $A$
+\end_inset
+
+ is invertible.
+ Each matrix 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+is of the form
+\begin_inset Formula 
+\[
+S_{i}=\begin{bmatrix}1\\
+ & \ddots\\
+ &  & 1\\
+ &  &  & s_{i,i}\\
+ &  &  & s_{i+1,i} & 1\\
+ &  &  & \vdots &  & \ddots\\
+ &  &  & s_{n,i} &  &  & 1
+\end{bmatrix}\, P_{i,k_{i}}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $k_{i}\ge i$
+\end_inset
+
+ for 
+\begin_inset Formula $i=1,\ldots,n$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{i,i}=I_{n}$
+\end_inset
+
+ (if 
+\begin_inset Formula $k_{i}=i$
+\end_inset
+
+ so no row interchange was incurred.) It follows that
+\begin_inset Formula 
+\begin{eqnarray*}
+S_{n}\cdot\cdot\cdot S_{1} & = & \begin{bmatrix}1\\
+ & \ddots\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & s_{n,n}
+\end{bmatrix}\begin{bmatrix}1\\
+ & \ddots\\
+ &  & 1\\
+ &  &  & s_{n-1,n-1}\\
+ &  &  & s_{n,n-1} & 1
+\end{bmatrix}\, P_{n-1,k_{n-1}}\\
+ &  & \begin{bmatrix}1\\
+ & \ddots\\
+ &  & 1\\
+ &  &  & s_{n-2,n-2}\\
+ &  &  & s_{n-1,n-2} & 1\\
+ &  &  & s_{n,n-2} & 0 & 1
+\end{bmatrix}\, P_{n-2,k_{n-2}}\cdots\\
+ &  & \begin{bmatrix}1\\
+ & s_{22}\\
+ & s_{32} & 1\\
+ & \vdots &  & \ddots\\
+ & s_{n,2} &  &  & 1
+\end{bmatrix}\, P_{2,k_{2}}\begin{bmatrix}s_{11}\\
+s_{21} & 1\\
+s_{31} &  & 1\\
+\vdots &  &  & \ddots\\
+s_{n,1} &  &  &  & 1
+\end{bmatrix}\, P_{1,k_{1}.}
+\end{eqnarray*}
+
+\end_inset
+
+In view of Lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Lemma:P-times-G"
+
+\end_inset
+
+ and its corollary we can push across the transpositions through to the
+ right without changing the structure of the 
+\begin_inset Formula $s$
+\end_inset
+
+ matrices.
+ Only some of the entries below 
+\begin_inset Formula $s_{kk}$
+\end_inset
+
+ will get altered.
+ Thus the product 
+\begin_inset Formula $S_{n}\cdot\cdot\cdot S_{1}$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $\widetilde{L}Q$
+\end_inset
+
+ where 
+\begin_inset Formula $\widetilde{L}$
+\end_inset
+
+ is an invertible lower triangular matrix and 
+\begin_inset Formula $Q$
+\end_inset
+
+ is a permutation matrix.
+ 
+\end_layout
+
+\begin_layout Proof
+Therefore 
+\begin_inset Formula 
+\[
+A=Q^{-1}\widetilde{L}\widetilde{U}=P\left(\widetilde{L}D^{-1}\right)D\widetilde{U}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $D$
+\end_inset
+
+ is the daiagonal of 
+\begin_inset Formula $\widetilde{L}$
+\end_inset
+
+.
+ This is of the form 
+\begin_inset Formula $PLU$
+\end_inset
+
+ where 
+\begin_inset Formula $L$
+\end_inset
+
+ has 1's on the diagonal.
+ This completes the proof.
 \end_layout
 
 \begin_layout Chapter
@@ -18096,7 +22700,7 @@ Eigenvalues and Eigenvectors
 
 \begin_layout Standard
 \begin_inset FormulaMacro
-\newcommand{\x}{\boldsymbol{x}}
+\renewcommand{\x}{\boldsymbol{x}}
 \end_inset
 
  
