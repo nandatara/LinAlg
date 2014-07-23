@@ -649,6 +649,26 @@ LatexCommand tableofcontents
 Matrices and Vector Spaces 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+sgn{
+\backslash
+operatorname{sgn}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Determinants and Their Properties
 \end_layout
@@ -659,7 +679,7 @@ Introduction
 
 \begin_layout Standard
 In the various processes of analysis there are certain classes of functions
- which ocur with remarkable frequency.
+ which occur with remarkable frequency.
  Of these there are some which have been studied with great care, and of
  which general theories have been developed.
  The functions known as 
@@ -712,6 +732,32 @@ Treatise on the Theory of Determinants
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The determinant is an object of a ring 
+\begin_inset Formula $R$
+\end_inset
+
+ assigned to every square matrix 
+\begin_inset Formula $A\in R^{n,n}$
+\end_inset
+
+, where 
+\begin_inset Formula $R$
+\end_inset
+
+ is a commutative ring with unity.
+ This object has interesting and important properties.
+ Among other things, we get through it a necessary and sufficient condition
+ for a matrix 
+\begin_inset Formula $A\in R^{n,n}$
+\end_inset
+
+ to be invertible.
+ Moreover determinant is the basis for central concepts of linear algebra,
+ which we in will adopt the following chapters (especially the characteristic
+ polynomial of matrices).
 \end_layout
 
 \begin_layout Section
@@ -1649,6 +1695,47 @@ a_{21} & a_{22}
 \end_inset
 
 for the second order determinant corresponding to this array.
+ 
+\end_layout
+
+\begin_layout Standard
+To calculate the determinant of an array with the signature formula we must
+ caculate the sum of 
+\begin_inset Formula $n!$
+\end_inset
+
+ products, each with 
+\begin_inset Formula $n$
+\end_inset
+
+ factors.
+ This is for large 
+\begin_inset Formula $n$
+\end_inset
+
+, even on modern computers, too expensive.
+ As we will see later, there are more efficient ways to calculate a determinant.
+ The signature formula is mainly of theoretical importance, because it represent
+s the determinant explicitly as a function of the entries of an array.
+ Considering 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ entries as variables, determinant is a polynomial in these 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ variables.
+ If 
+\begin_inset Formula $R=\mathbf{R}$
+\end_inset
+
+ or 
+\begin_inset Formula $R=\mathbf{C}$
+\end_inset
+
+, it can be shown based on the signature formula with means of analysis
+ that determinant is a continuous function of the entries of an array.
  
 \end_layout
 
@@ -4928,6 +5015,87 @@ Matrices
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\e}{\mathbf{e}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\a}{\mathbf{a}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\b}{\mathbf{b}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\c}{\mathbf{c}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\u}{\mathbf{u}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\v}{\mathbf{v}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\w}{\mathbf{w}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\0}{\mathbf{0}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\r}{\mathbf{r}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\x}{\mathbf{x}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\y}{\mathbf{y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+diag{
+\backslash
+operatorname{diag}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 In this chapter we define matrices with its main operations, and we study
  various matrices formed from groups and rings.
  The English mathematician James Joseph Sylvester invented the term ``Matrix''
@@ -7236,75 +7404,6 @@ Table[k*p.MatrixPower[P,n].pr,{n,5}]//ColumnForm
 \end_layout
 
 \begin_layout Standard
-\begin_inset FormulaMacro
-\newcommand{\e}{\mathbf{e}}
-\end_inset
-
- 
-\begin_inset FormulaMacro
-\newcommand{\a}{\mathbf{a}}
-\end_inset
-
- 
-\begin_inset FormulaMacro
-\newcommand{\b}{\mathbf{b}}
-\end_inset
-
- 
-\begin_inset FormulaMacro
-\newcommand{\c}{\mathbf{c}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\u}{\mathbf{u}}
-\end_inset
-
- 
-\begin_inset FormulaMacro
-\newcommand{\v}{\mathbf{v}}
-\end_inset
-
- 
-\begin_inset FormulaMacro
-\newcommand{\w}{\mathbf{w}}
-\end_inset
-
- 
-\begin_inset FormulaMacro
-\newcommand{\0}{\mathbf{0}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\r}{\mathbf{r}}
-\end_inset
-
-
-\begin_inset FormulaMacro
-\newcommand{\x}{\mathbf{x}}
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-def
-\backslash
-diag{
-\backslash
-operatorname{diag}}
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -7520,6 +7619,23 @@ The columns of
 \end_inset
 
 .
+ In particular if the 
+\begin_inset Formula $k$
+\end_inset
+
+-th column of 
+\begin_inset Formula $B$
+\end_inset
+
+ is 0 then so is the 
+\begin_inset Formula $k$
+\end_inset
+
+-th column of 
+\begin_inset Formula $A$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7561,6 +7677,23 @@ The rows of
 
 -th row of 
 \begin_inset Formula $C$
+\end_inset
+
+.
+ In particular if the 
+\begin_inset Formula $k$
+\end_inset
+
+-th row of 
+\begin_inset Formula $C$
+\end_inset
+
+ is 0 then so is the 
+\begin_inset Formula $k$
+\end_inset
+
+-th row of 
+\begin_inset Formula $A$
 \end_inset
 
 .
@@ -8233,6 +8366,13 @@ n).
 \end_layout
 
 \begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "Thm:Ring-of-Matrices"
+
+\end_inset
+
+
 \begin_inset Formula $\left(R^{n,n},+,\star\right)$
 \end_inset
 
@@ -9867,7 +10007,7 @@ P=\begin{bmatrix}\e_{\pi\left(1\right)}, & \cdots & \cdots & \e_{\pi\left(n\righ
 then
 \begin_inset Formula 
 \[
-P^{T}=\begin{bmatrix}\e_{\pi^{-1}\left(1\right)}, & \cdots & \cdots & \e_{\pi^{-1}\left(n\right)}\end{bmatrix}.
+P^{T}=\begin{bmatrix}\e_{\pi^{-1}\left(1\right)}, & \cdots & \cdots & \e_{\pi^{-1}\left(n\right)}\end{bmatrix}=P^{-1}.
 \]
 
 \end_inset
@@ -11112,8 +11252,7 @@ In many applications, one is interested in whether a (square) matrix
 \end_inset
 
  is obtained as a product of the so-called elementary matrices.
- If these elementary matrices from are multiplied on the left of the matrix
- 
+ If these elementary matrices are multiplied on the left of the matrix 
 \begin_inset Formula $A$
 \end_inset
 
@@ -11122,10 +11261,10 @@ In many applications, one is interested in whether a (square) matrix
 \begin_inset Formula $A$
 \end_inset
 
- does not result in the identity matrix, but results in a matrix, ,that
- is ``as close to'' to the unit matrix, in a certain sense.
+ does not result in the identity matrix, but results in a matrix, that is
+ ``as close to'' to the unit matrix, in a certain sense.
  The term rank of matrices is motivated, which in linear algebra is of great
- importance and occurs frequently occur in later chapters.
+ importance and occurs frequently in later chapters.
 \end_layout
 
 \begin_layout Section
@@ -11145,7 +11284,7 @@ Let
 \begin_inset Formula $\e_{i}$
 \end_inset
 
-be the 
+ be the 
 \begin_inset Formula $i$
 \end_inset
 
@@ -12244,8 +12383,7 @@ Let
 \begin_inset Formula 
 \begin{eqnarray*}
 P_{\sigma}\e_{l} & = & \e_{\sigma\left(l\right)}\\
-G_{ij}\left(\lambda\right)P_{\sigma}\e_{l} & = & G_{ij}\left(\lambda\right)\e_{\sigma\left(l\right)}\\
- & = & \begin{cases}
+G_{ij}\left(\lambda\right)P_{\sigma}\e_{l} & = & G_{ij}\left(\lambda\right)\e_{\sigma\left(l\right)}=\begin{cases}
 \e_{\sigma\left(l\right)} & \text{if }l\neq k\\
 \e_{i}+\lambda\e_{j} & \text{if }l=k.
 \end{cases}
@@ -12334,6 +12472,123 @@ G_{i,n}\left(\lambda_{n}\right)\cdot\cdot\cdot G_{i,i+1}\left(\lambda_{i+1}\righ
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Section
+Determinants of Elementary Matrices
+\end_layout
+
+\begin_layout Standard
+We now consider the determinants of elementary matrices.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "Lemma:Det-Elem-Matrices"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+(1) For 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ and the associated permutation matrix 
+\begin_inset Formula $P_{\sigma}\in R^{n,n}$
+\end_inset
+
+ we have 
+\begin_inset Formula $\sgn\left(\sigma\right)=\det\left(P_{\sigma}\right)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $n\ge2$
+\end_inset
+
+ 
+\begin_inset Formula $\det\left(P_{ij}\right)=-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+(2) 
+\begin_inset Formula $\det\left(M_{i}\left(\lambda\right)\right)=\lambda$
+\end_inset
+
+ and 
+\begin_inset Formula $\det\left(G_{ij}\left(\lambda\right)=1\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(1) Let 
+\begin_inset Formula $P_{\sigma}=\left[a_{ij}\right]$
+\end_inset
+
+, so that 
+\begin_inset Formula $a_{\sigma\left(j\right),j}=1,\, j=1,2,\ldots,n$
+\end_inset
+
+ and all other entries of 
+\begin_inset Formula $P_{\sigma}$
+\end_inset
+
+ are 0.
+ It follows
+\begin_inset Formula 
+\[
+\det\left(P_{\sigma}\right)=\det\left(P_{\sigma}^{T}\right)=\sum_{\pi\in S_{n}}\sgn\left(\pi\right)\underbrace{\prod_{j=1}^{n}a_{\pi\left(j\right),\, j}}_{=0\text{ for }\pi\neq\sigma}=\sgn\left(\sigma\right)\prod_{j=1}^{n}\underbrace{a_{\sigma\left(j\right),\, j}}_{=1}.
+\]
+
+\end_inset
+
+The permutation 
+\begin_inset Formula $P_{ij}$
+\end_inset
+
+ corresponds to a transposition, hence 
+\begin_inset Formula $\det\left(P_{ij}\right)=-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+(2) The matrices 
+\begin_inset Formula $M_{i}\left(\lambda\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $G_{ij}\left(\lambda\right)$
+\end_inset
+
+ are respectively diagonal and triangular so the result follows from 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Properties-of-Det"
+
+\end_inset
+
+(4).
+\end_layout
+
+\begin_layout Standard
+Now we can derive some important computation rules for determinants.
+ Some of these have already been derived.
+ We give a different derivation using elementary matrices.
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
@@ -12470,7 +12725,7 @@ We assume that
 \end_inset
 
  are invertible.
- This fact is generally not given for matrices over a ring.
+ This fact is generally not true for matrices over a ring.
 \end_layout
 
 \begin_layout Definition
@@ -12531,8 +12786,8 @@ All non–zero rows are above any zero rows.
 \end_layout
 
 \begin_layout Enumerate
-Each leading entry of a each non–zero row is in a column to the right of
- the leading entry of the row above it.
+Each leading entry of a non–zero row is in a column to the right of the
+ leading entry of the row above it.
  
 \end_layout
 
@@ -12576,55 +12831,36 @@ For each that does have row echelon form, decide whether or not it also
 
 If it is not in an echelon form state which property in the definition is
  violated.
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $\begin{bmatrix}0 & 0 & 4 & 1 & 0\\
+\begin_inset Formula 
+\[
+\begin{bmatrix}0 & 0 & 4 & 1 & 0\\
 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 3
-\end{bmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $\begin{bmatrix}1 & 1 & 0 & 1\\
+\end{bmatrix}\qquad\begin{bmatrix}1 & 1 & 0 & 1\\
 0 & 0 & 1 & 1\\
 0 & 0 & 0 & 0
-\end{bmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $\begin{bmatrix}1 & 1 & 0 & 0\\
+\end{bmatrix},\qquad\begin{bmatrix}1 & 1 & 0 & 0\\
 0 & 1 & 1 & 0\\
 0 & 0 & 1 & 1
-\end{bmatrix}$
+\end{bmatrix},
+\]
+
 \end_inset
 
 
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $\begin{bmatrix}1 & 0 & 0 & 0\\
+\begin_inset Formula 
+\[
+\begin{bmatrix}1 & 0 & 0 & 0\\
 1 & 1 & 0 & 0\\
 0 & 1 & 1 & 0\\
 0 & 0 & 1 & 1
-\end{bmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $\begin{bmatrix}0 & 1 & 1 & 1 & 1\\
+\end{bmatrix},\qquad\begin{bmatrix}0 & 1 & 1 & 1 & 1\\
 0 & 0 & 2 & 2 & 2\\
 0 & 0 & 0 & 0 & 3\\
 0 & 0 & 0 & 0 & 0
-\end{bmatrix}$
+\end{bmatrix}
+\]
+
 \end_inset
 
 
@@ -12813,7 +13049,7 @@ C\,:=S_{t}\cdot\cdot\cdot S_{1}A
 
 \end_inset
 
- is in echelon form, i.e., 
+ is in reduced echelon form, i.e., 
 \begin_inset Formula $C$
 \end_inset
 
@@ -14140,7 +14376,7 @@ Here we must note that the elementary matrices formed in the product for
 \begin_inset Formula $\overline{S}_{k}$
 \end_inset
 
- are ofcourse not 
+ are of course not 
 \begin_inset Formula $n\times n$
 \end_inset
 
@@ -14513,7 +14749,7 @@ R^{\left(k\right)}=\left[r_{ij}^{\left(k\right)}\right]:=S_{r+k-1}R^{\left(k-1\r
 where 
 \begin_inset Formula 
 \[
-S_{r+k-1}:=\left(G_{1,k}\left(-r_{1,,j_{k}}^{\left(k-1\right)}\right)\right)^{T}\cdot\cdot\cdot\left(G_{k-1,k}\left(-r_{k-1,,j_{k}}^{\left(k-1\right)}\right)\right)^{T}.
+S_{r+k-1}:=\left(G_{1,k}\left(-r_{1,j_{k}}^{\left(k-1\right)}\right)\right)^{T}\cdot\cdot\cdot\left(G_{k-1,k}\left(-r_{k-1,j_{k}}^{\left(k-1\right)}\right)\right)^{T}.
 \]
 
 \end_inset
@@ -14641,6 +14877,12 @@ A^{-1}=S_{1}^{-1}S_{2}^{-1}\cdot\cdot\cdot S_{t}^{-1}.
 \end_layout
 
 \begin_layout Example
+\begin_inset CommandInset label
+LatexCommand label
+name "Ex:3.2"
+
+\end_inset
+
 Transform the matrix below in 
 \begin_inset Formula $\mathbf{Q}^{3,5}$
 \end_inset
@@ -15867,12 +16109,4509 @@ where
  This completes the proof.
 \end_layout
 
-\begin_layout Chapter
-Vector Spaces
+\begin_layout Example
+Calculate the 
+\begin_inset Formula $LU$
+\end_inset
+
+ decomposition of the matrix
+\begin_inset Formula 
+\[
+A=\begin{bmatrix}2 & 2 & 4\\
+2 & 2 & 1\\
+2 & 0 & 1
+\end{bmatrix}\in\mathbf{Q}^{3,3}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 
+\series bold
+Soln.
+
+\series default
+ 
+\series bold
+Step 1.
+
+\series default
+ 
+\begin_inset Formula $j_{1}=1,\, i_{1}=1.$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+G_{12}\left(-2\right)G_{13}\left(-2\right)M_{1}\left(\frac{1}{2}\right)=\begin{bmatrix}1 & 0 & 0\\
+-2 & 1 & 0\\
+-2 & 0 & 1
+\end{bmatrix}\begin{bmatrix}\frac{1}{2} & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}=\begin{bmatrix}\frac{1}{2} & 0 & 0\\
+-1 & 1 & 0\\
+-1 & 1 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+A^{\left(2\right)}=\begin{bmatrix}\frac{1}{2} & 0 & 0\\
+-1 & 1 & 0\\
+-1 & 0 & 1
+\end{bmatrix}\begin{bmatrix}2 & 2 & 4\\
+2 & 2 & 1\\
+2 & 0 & 1
+\end{bmatrix}=\begin{bmatrix}1 & 1 & 2\\
+0 & 0 & -3\\
+0 & -2 & -3
+\end{bmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Step 2.
+
+\series default
+ 
+\begin_inset Formula $j_{2}=2,\, i_{2}=3.$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P_{23}=\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+A^{\left(3\right)}=\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{bmatrix}\begin{bmatrix}1 & 1 & 2\\
+0 & 0 & -3\\
+0 & -2 & -3
+\end{bmatrix}=\begin{bmatrix}1 & 1 & 2\\
+0 & -2 & -3\\
+0 & 0 & -3
+\end{bmatrix}=\widetilde{U}.
+\]
+
+\end_inset
+
+so
+\begin_inset Formula 
+\[
+\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{bmatrix}\begin{bmatrix}\frac{1}{2} & 0 & 0\\
+-1 & 1 & 0\\
+-1 & 0 & 1
+\end{bmatrix}\begin{bmatrix}2 & 2 & 4\\
+2 & 2 & 1\\
+2 & 0 & 1
+\end{bmatrix}=\begin{bmatrix}\frac{1}{2} & 0 & 0\\
+-1 & 1 & 0\\
+-1 & 0 & 1
+\end{bmatrix}\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{bmatrix}\begin{bmatrix}2 & 2 & 4\\
+2 & 2 & 1\\
+2 & 0 & 1
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\widetilde{L}=\begin{bmatrix}\frac{1}{2} & 0 & 0\\
+-1 & 1 & 0\\
+-1 & 0 & 1
+\end{bmatrix},\ Q=\begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{bmatrix},\,\widetilde{L}^{-1}=\begin{bmatrix}2 & 0 & 0\\
+2 & 1 & 0\\
+2 & 0 & 1
+\end{bmatrix},\, D=\begin{bmatrix}\frac{1}{2} & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+L=\widetilde{L}^{-1}D=\begin{bmatrix}1 & 0 & 0\\
+1 & 1 & 0\\
+1 & 0 & 1
+\end{bmatrix},\, U=D^{-1}\widetilde{U}=\begin{bmatrix}2 & 2 & 4\\
+0 & -2 & -3\\
+0 & 0 & -3
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Check:
+\series default
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+PLU & = & \begin{bmatrix}1 & 0 & 0\\
+0 & 0 & 1\\
+0 & 1 & 0
+\end{bmatrix}\begin{bmatrix}1 & 0 & 0\\
+1 & 1 & 0\\
+1 & 0 & 1
+\end{bmatrix}\begin{bmatrix}2 & 2 & 4\\
+0 & -2 & -3\\
+0 & 0 & -3
+\end{bmatrix}\\
+ & = & \begin{bmatrix}1 & 0 & 0\\
+1 & 0 & 1\\
+1 & 1 & 0
+\end{bmatrix}\begin{bmatrix}2 & 2 & 4\\
+0 & -2 & -3\\
+0 & 0 & -3
+\end{bmatrix}=\begin{bmatrix}2 & 2 & 4\\
+2 & 2 & 1\\
+2 & 0 & 1
+\end{bmatrix}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Remark.
+
+\series default
+ If 
+\begin_inset Formula $A\in GL_{n}\mathbb{\left(F\right)}$
+\end_inset
+
+, the 
+\begin_inset Formula $LU$
+\end_inset
+
+ decomposition provides 
+\begin_inset Formula $A^{-1}=U^{-1}L^{-1}PT$
+\end_inset
+
+.
+ After the calculation of the 
+\begin_inset Formula $L$
+\end_inset
+
+U decomposition thus obtained the inverse of 
+\begin_inset Formula $A$
+\end_inset
+
+ is essentially computed by the inversion of triangular matrices.
+ We have seen in Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm: Solution-Ux=b"
+
+\end_inset
+
+ an efficient recursive method for computing 
+\begin_inset Formula $U^{-1}$
+\end_inset
+
+, the 
+\begin_inset Formula $LU$
+\end_inset
+
+ decomposition is therefore frequently used in applications of scientific
+ computing.
+ However, in this connection, other strategies for choice of permutation
+ matrices are used.
+ Instead of the first non-zero element in the elimination, you exchange
+ the element with the largest absolute value in this position.
+ By this strategy, the influence of rounding errors is reduced.
+ 
+\end_layout
+
+\begin_layout Section
+Uniquness of Reduced Echelon Form
+\end_layout
+
+\begin_layout Standard
+We will now justify the term reduced echelon form, by showing that this
+ form is uniquely determined for each matrix 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+.
+ For this we need the following definition
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "Def:Pivot-Positions"
+
+\end_inset
+
+If 
+\begin_inset Formula $C\in\mathbb{F}^{n,m}$
+\end_inset
+
+ is a matrix in reduced echelon form (as in Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Row-Echelon-Form"
+
+\end_inset
+
+), then the ``step positions'' 
+\begin_inset Formula 
+\[
+\left(1,\, j_{1}\right),\left(2,\, j_{2}\right),\ldots,\left(r,\, j_{r}\right)
+\]
+
+\end_inset
+
+are referred to as the 
+\emph on
+pivot positions
+\emph default
+ of 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We need the following result for the proof of uniqueness.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "Lemma:Invertibility-and-homogeneous-system"
+
+\end_inset
+
+If 
+\begin_inset Formula $Z\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $x\in\mathbb{F}^{n,1}$
+\end_inset
+
+, then 
+\begin_inset Formula $Zx=0$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $x=0$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Proof
+Obvious.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "Thm:Uniqueness-RREF"
+
+\end_inset
+
+Let 
+\begin_inset Formula $A,B\in\mathbb{F}^{n,m}$
+\end_inset
+
+ be in reduced echelon form.
+ If 
+\begin_inset Formula $A=ZB$
+\end_inset
+
+ for a matrix 
+\begin_inset Formula $Z\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ , then 
+\begin_inset Formula $A=B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $B$
+\end_inset
+
+ is the zero matrix, then 
+\begin_inset Formula $A=ZB=0,$
+\end_inset
+
+ so 
+\begin_inset Formula $A=B$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Let now 
+\begin_inset Formula $B\neq0$
+\end_inset
+
+ and let 
+\begin_inset Formula $A,\, B$
+\end_inset
+
+ be in reduced echelon form with respective columns 
+\begin_inset Formula $\a_{i},\b_{i},$
+\end_inset
+
+ 
+\begin_inset Formula $1\le i\le m$
+\end_inset
+
+ i.e.,
+\begin_inset Formula 
+\[
+A=\left[\a_{1},\ldots,\a_{m}\right]\quad\text{and}\quad B=\left[\b_{1},\ldots,\b_{m}\right].
+\]
+
+\end_inset
+
+Further denote by 
+\begin_inset Formula $\left(1,\, j_{1}\right),\left(2,\, j_{2}\right),\ldots,\left(r,\, j_{r}\right)$
+\end_inset
+
+ the 
+\begin_inset Formula $r\ge1$
+\end_inset
+
+ pivot positions of 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+We show that any matrix 
+\begin_inset Formula $Z\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+, for which 
+\begin_inset Formula $A=ZB$
+\end_inset
+
+ has the form 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Z=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{r} & *
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{n-r,r} & Z_{n-r,n-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+where 
+\begin_inset Formula $Z_{n-r}\in GL_{n-r}\left(\mathbb{F}\right)$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $B$
+\end_inset
+
+ is in reduced echelon form and all entries of 
+\begin_inset Formula $B$
+\end_inset
+
+ below row 
+\begin_inset Formula $r$
+\end_inset
+
+ are equal to zero it follows 
+\begin_inset Formula $ZB=B$
+\end_inset
+
+ and so 
+\begin_inset Formula $A=B$
+\end_inset
+
+.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ZB=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{r} & *
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{n-r,r} & Z_{n-r,n-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l|l} 
+\end_layout
+
+\begin_layout Plain Layout
+
+B_{1} & B_{2}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{n-r,r} & 0_{n-r,n-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right]=B
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+Since 
+\begin_inset Formula $\left(1,j_{1}\right)$
+\end_inset
+
+ is the first pivot position of 
+\begin_inset Formula $B$
+\end_inset
+
+ so 
+\begin_inset Formula $\b_{i}=\mathbf{0}\in\mathbb{F}^{n,1}$
+\end_inset
+
+ for 
+\begin_inset Formula $1\le i\le j_{1}-1$
+\end_inset
+
+ and 
+\begin_inset Formula $\b_{j_{1}}=\e_{1}$
+\end_inset
+
+ (the first column of the identity matrix 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+).
+ From 
+\begin_inset Formula $A=ZB$
+\end_inset
+
+ follows 
+\begin_inset Formula $\a_{i}=\mathbf{0}\in\mathbb{F}^{n,1}$
+\end_inset
+
+for 
+\begin_inset Formula $1\le i\le j_{1}-1$
+\end_inset
+
+ and 
+\begin_inset Formula $\a_{j_{1}}=Z\b_{j_{1}}=Z\e_{1}.$
+\end_inset
+
+Since 
+\begin_inset Formula $Z$
+\end_inset
+
+ is invertible 
+\begin_inset Formula $\a_{j_{1}}\neq\mathbf{0}\in\mathbb{F}^{n,1}$
+\end_inset
+
+(cf.
+ Lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Lemma:Invertibility-and-homogeneous-system"
+
+\end_inset
+
+).
+ As 
+\begin_inset Formula $A$
+\end_inset
+
+ is in reduced echelon form it follows that 
+\begin_inset Formula $\a_{j_{1}}=\e_{1}=\b_{j_{1}}$
+\end_inset
+
+.
+ Furthermore it follows 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Z=Z_n
+\backslash
+colon=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l|l} 
+\end_layout
+
+\begin_layout Plain Layout
+
+1 & *
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{n-1,1} & Z_{n-1,n-1} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+where 
+\begin_inset Formula $Z_{n-1}\in GL_{n-1}\left(\mathbb{F}\right)$
+\end_inset
+
+.
+ In case 
+\begin_inset Formula $r=1$
+\end_inset
+
+ we are done.
+ If 
+\begin_inset Formula $r>1$
+\end_inset
+
+ we deal with other pivot positions similarly.
+ 
+\end_layout
+
+\begin_layout Proof
+Since 
+\begin_inset Formula $B$
+\end_inset
+
+ is in reduced echelon form, 
+\begin_inset Formula $\b_{j_{k}}=\e_{k}$
+\end_inset
+
+ for the pivot position 
+\begin_inset Formula $\left(k,\, j_{k}\right)$
+\end_inset
+
+.
+ From 
+\begin_inset Formula $\a_{j_{k}}=Z\b_{j_{k}}$
+\end_inset
+
+and the invertibility of 
+\begin_inset Formula $Z_{n-k+1}$
+\end_inset
+
+ it follows as above 
+\begin_inset Formula $\a_{j_{k}}=\b_{j_{k}}$
+\end_inset
+
+and 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Z=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l|c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{k-1} &0_{k-1,1} & *
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{1,k-1} & 1& * 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{n-k,k-1} &0_{n-k,1}& Z_{n-k,n-k} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+where 
+\begin_inset Formula $Z_{n-k}\in GL_{n-k}\left(\mathbb{F}\right)$
+\end_inset
+
+.
+ The proof follows by induction.
+\end_layout
+
+\begin_layout Standard
+With the help of this theorem we can now prove the unioqueness of the reduced
+ echelon form of any mathrix.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "Cor:Uniqueness-RREF"
+
+\end_inset
+
+For any matrix 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Corollary
+(1) There exists a unique matrix 
+\begin_inset Formula $C\in\mathbb{F}^{n,m}$
+\end_inset
+
+in reduced echelon form such that 
+\begin_inset Formula $A$
+\end_inset
+
+ can be transformed to 
+\begin_inset Formula $C$
+\end_inset
+
+ by left multiplication with elementary matrices.
+ 
+\end_layout
+
+\begin_layout Corollary
+(2) If 
+\begin_inset Formula $M\in GL_{n}\left(\mathbb{F}\right),$
+\end_inset
+
+ then 
+\begin_inset Formula $C$
+\end_inset
+
+ is also the reduced echelon form of 
+\begin_inset Formula $MA$
+\end_inset
+
+, i.e., the reduced echelon form is invariant under left multiplication by
+ invertible matrices.
+\end_layout
+
+\begin_layout Proof
+(1) The existence of 
+\begin_inset Formula $C$
+\end_inset
+
+ has been established in Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Row-Echelon-Form"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $S_{1}A=C_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{2}A=C_{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ are in reduced echelon form and 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+are invertible, then 
+\begin_inset Formula $C_{1}=\left(S_{1}S_{2}^{-1}\right)C_{2}$
+\end_inset
+
+.
+ By Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Uniqueness-RREF"
+
+\end_inset
+
+ now it follows 
+\begin_inset Formula $C_{1}=C_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+(2) If 
+\begin_inset Formula $M\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $S_{3}\left(MA\right)=C_{3}$
+\end_inset
+
+ is the reduced echelon form of 
+\begin_inset Formula $MA$
+\end_inset
+
+, it follows with 
+\begin_inset Formula $S_{1}A=C_{1}$
+\end_inset
+
+, that 
+\begin_inset Formula $C_{3}=\left(S_{3}MS_{1}^{-1}\right)C_{1}$
+\end_inset
+
+.
+ Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Uniqueness-RREF"
+
+\end_inset
+
+ implies 
+\begin_inset Formula $C_{3}=C_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Rank of Matrices
+\end_layout
+
+\begin_layout Standard
+As we have seen in Corollary 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Cor:Uniqueness-RREF"
+
+\end_inset
+
+, the reduced echelon form of a matrix 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ is uniquely determined.
+ In particular, there is, for every matrix 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ a uniquely determined number of pivot positions (cf.
+ Definition 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Def:Pivot-Positions"
+
+\end_inset
+
+) in their reduced echelon form.
+ This justifies the following definition.
+ 
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "Def:Rank"
+
+\end_inset
+
+The number 
+\begin_inset Formula $r$
+\end_inset
+
+ of pivot positions in the reduced echelon form of 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ is called the 
+\emph on
+Rank
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The term rank has been used (in the context of bilinear forms) for the first
+ time in 1879 by the German mathematician Ferdinand Georg Frobenius (1849-1917).
+\end_layout
+
+\end_inset
+
+
+\emph default
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+ and denoted Rank
+\begin_inset Formula $\left(A\right)$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Definition
+We see immediately, that for 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ always Rank
+\begin_inset Formula $\left(A\right)\le\min\left\{ n,m\right\} $
+\end_inset
+
+.
+ Moreover, it follows from Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Row-Echelon-Form"
+
+\end_inset
+
+ that 
+\begin_inset Formula $A\in\mathbb{F}^{n,n}$
+\end_inset
+
+ is invertible if and only if Rank
+\begin_inset Formula $\left(A\right)=n$
+\end_inset
+
+.
+ More properties of rank are summarized in the following theorem.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "Thm:Properties-of-Rank"
+
+\end_inset
+
+For 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Theorem
+(1) There exist matrices 
+\begin_inset Formula $Q\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Z\in GL_{m}\left(\mathbb{F}\right)$
+\end_inset
+
+ with
+\begin_inset Formula 
+\[
+QAZ=\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+if and only if Rank
+\begin_inset Formula $\left(A\right)=r$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+(2) If 
+\begin_inset Formula $Q\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Z\in GL_{m}\left(\mathbb{F}\right)$
+\end_inset
+
+ then Rank
+\begin_inset Formula $\left(A\right)=\text{Rank}\left(QAZ\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+(3) If 
+\begin_inset Formula $A=BC$
+\end_inset
+
+ with 
+\begin_inset Formula $B\in\mathbb{F}^{n,l}$
+\end_inset
+
+ and 
+\begin_inset Formula $C\in\mathbb{F}^{l,m}$
+\end_inset
+
+, then
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{(a) Rank}\left(A\right) & \le & \text{Rank}\left(B\right),\\
+\text{ (b) Rank}\left(A\right) & \le & \text{Rank}\left(C\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+(4) 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\text{Rank}\left(A\right)=\text{Rank}\left(A^{T}\right).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+(5) There exist matrices 
+\begin_inset Formula $B\in\mathbb{F}^{n,l}$
+\end_inset
+
+ and 
+\begin_inset Formula $C\in\mathbb{F}^{l,m}$
+\end_inset
+
+ with 
+\begin_inset Formula $A=BC$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $\text{ Rank}\left(A\right)\le l$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Proof
+We first show (3a).
+ Let 
+\begin_inset Formula $Q\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ such that 
+\begin_inset Formula $QB$
+\end_inset
+
+ is in reduced echelon form.
+ Then 
+\begin_inset Formula $QA=QBC$
+\end_inset
+
+.
+ In the matrix 
+\begin_inset Formula $QBC$
+\end_inset
+
+ at most the first 
+\begin_inset Formula $\text{Rank}\left(B\right)$
+\end_inset
+
+ rows are different zero.
+ The reduced echelon form of 
+\begin_inset Formula $QA$
+\end_inset
+
+ is by Corollary 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Cor:Uniqueness-RREF"
+
+\end_inset
+
+(2) equal to the reduced echelon form of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Thus, also in the reduced echelon form of A, at most first 
+\begin_inset Formula $\text{Rank}\left(B\right)$
+\end_inset
+
+ rows are different from zero, from which 
+\begin_inset Formula $\text{Rank}\left(A\right)\le\text{Rank}\left(B\right)$
+\end_inset
+
+ follows.
+\end_layout
+
+\begin_layout Proof
+(1) 
+\begin_inset Formula $\Longleftarrow$
+\end_inset
+
+: If Rank
+\begin_inset Formula $\left(A\right)=r=0$
+\end_inset
+
+, then 
+\begin_inset Formula $A$
+\end_inset
+
+ is 0 and we are done.
+ Let now 
+\begin_inset Formula $r\ge1$
+\end_inset
+
+.
+ Then there exists a matrix 
+\begin_inset Formula $Q\in GL_{n}\left(\mathbb{F}\right),$
+\end_inset
+
+ such that 
+\begin_inset Formula $QA$
+\end_inset
+
+ is in the reduced echelon form with 
+\begin_inset Formula $r$
+\end_inset
+
+ pivot positions.
+ There exists a permutation matrix 
+\begin_inset Formula $P\in\mathbb{F}^{m,m}$
+\end_inset
+
+ such that
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+PA^TQ^T=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{r} & 0_{r,n-r}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+* & 0_{m-r,m-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] =:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{r} & 0_{r,n-r}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+V & 0_{m-r,m-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+where 
+\begin_inset Formula $V\in\mathbb{F}^{m-r,r}$
+\end_inset
+
+.
+ Then the matrix
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Y:=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{r} & 0_{r,n-r}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+-V & I_{m-r,m-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\backslash
+in
+\backslash
+mathbb F^{m,m}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+ is invertible with
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Y^{-1}:=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{r} & 0_{r,n-r}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+V & I_{m-r,m-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\backslash
+in
+\backslash
+mathbb F^{m,m}.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+It follows that
+\begin_inset Formula 
+\[
+YPA^{T}Q^{T}=\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}.
+\]
+
+\end_inset
+
+With 
+\begin_inset Formula $Z:=P^{T}Y^{T}\in\mathbb{F}^{m,m}$
+\end_inset
+
+ there results
+\begin_inset Formula 
+\begin{equation}
+QAZ=\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}.\label{eq:3.5.1}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+: Suppose 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:3.5.1"
+
+\end_inset
+
+ holds for 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ and matrices 
+\begin_inset Formula $Q\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Z\in GL_{m}\left(\mathbb{F}\right)$
+\end_inset
+
+.
+ Then it follows with the help of (3a),
+\begin_inset Formula 
+\[
+\text{Rank}\left(A\right)=\text{Rank}\left(AZZ^{-1}\right)\le\text{Rank}\left(AZ\right)\le\text{Rank}\left(A\right).
+\]
+
+\end_inset
+
+So in particular 
+\begin_inset Formula $\text{Rank}\left(A\right)=\text{Rank}\left(AZ\right)$
+\end_inset
+
+.
+ Because of the invariance of the reduced echelon form by left multiplication
+ by invertible matrices (Corollary 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Cor:Uniqueness-RREF"
+
+\end_inset
+
+) it follows that
+\begin_inset Formula 
+\[
+\text{Rank}\left(A\right)=\text{Rank}\left(AZ\right)=\text{Rank}\left(QAZ\right)=\text{Rank}\left(\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}\right)=r.
+\]
+
+\end_inset
+
+(2) Let 
+\begin_inset Formula $\text{Rank}\left(QAZ\right)=r$
+\end_inset
+
+.
+ By (1) there exist matrices 
+\begin_inset Formula $N\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $L\in GL_{m}\left(\mathbb{F}\right)$
+\end_inset
+
+ with
+\begin_inset Formula 
+\[
+N\left(QAZ\right)L=\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}.
+\]
+
+\end_inset
+
+With the help of (3a) it follows
+\begin_inset Formula 
+\begin{eqnarray*}
+r & = & \text{Rank}\left(QAZ\right)=\text{Rank}\left(AZ\right)\\
+ & \le & \text{Rank}\left(A\right)=\text{Rank}\left(NQA\right)=\text{Rank}\left(\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}L^{-1}Z^{-1}\right)\\
+ & \le & \text{Rank}\left(\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}\right)=r
+\end{eqnarray*}
+
+\end_inset
+
+and therefore 
+\begin_inset Formula $\text{Rank}\left(A\right)=r=\text{Rank}\left(QAZ\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+(4) Let 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\text{Rank}\left(A\right)=r$
+\end_inset
+
+, then there exist by (1) matrices 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $Q\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Z\in GL_{m}\left(\mathbb{F}\right)$
+\end_inset
+
+ with
+\begin_inset Formula 
+\[
+QAZ=\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}.
+\]
+
+\end_inset
+
+Thus
+\begin_inset Formula 
+\begin{eqnarray*}
+\text{Rank}\left(A\right) & = & \text{Rank}\left(QAZ\right)\text{=Rank}\left(\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}\right)\\
+ & = & \text{Rank}\left(\begin{bmatrix}I_{r} & 0\\
+0 & 0
+\end{bmatrix}^{T}\right)=\text{Rank}\left(\left(QAZ\right)^{T}\right)\\
+ & = & \text{Rank}\left(Z^{T}A^{T}Q^{T}\right)=\text{Rank}\left(A^{T}\right).
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(3b) With the help of (3a) and (4) it follows
+\begin_inset Formula 
+\[
+\text{Rank}\left(A\right)=\text{Rank}\left(A^{T}\right)=\text{Rank}\left(C^{T}B^{T}\right)\le\text{Rank}\left(C^{T}\right)=\text{Rank}\left(C\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+(5) Let 
+\begin_inset Formula $A=BC$
+\end_inset
+
+ with 
+\begin_inset Formula $B\in\mathbb{F}^{n,l}$
+\end_inset
+
+ and 
+\begin_inset Formula $C\in\mathbb{F}^{l,m}$
+\end_inset
+
+.
+ Then from (3a)
+\begin_inset Formula 
+\[
+\text{Rank}\left(A\right)=\text{Rank}\left(BC\right)\le\text{Rank}\left(B\right)\le l.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+On the other hand let 
+\begin_inset Formula $\text{Rank}\left(A\right)=r\le l$
+\end_inset
+
+.
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Then there exist by (1) matrices 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $Q\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Z\in GL_{m}\left(\mathbb{F}\right)$
+\end_inset
+
+ with
+\begin_inset Formula 
+\[
+QAZ=\begin{bmatrix}I_{r} & 0_{r,m-r}\\
+0_{n-r,r} & 0_{n-r,m-r}
+\end{bmatrix}.
+\]
+
+\end_inset
+
+So we obtain
+\begin_inset Formula 
+\begin{eqnarray*}
+A & = & \left(Q^{-1}\right)\begin{bmatrix}I_{r} & 0_{r,l-r}\\
+0_{n-r,r} & 0_{n-r,l-r}
+\end{bmatrix}\left(\begin{bmatrix}I_{r} & 0_{r,m-r}\\
+0_{l-r,r} & 0_{l-r,m-r}
+\end{bmatrix}Z^{-1}\right)\\
+ & =: & BC
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $B\in\mathbb{F}^{n,l}$
+\end_inset
+
+ and 
+\begin_inset Formula $C\in\mathbb{F}^{l,m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+For the matrix in Example 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Ex:3.2"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{bmatrix}0 & 2 & 1 & 3 & 3\\
+0 & 2 & 0 & 1 & 1\\
+0 & 2 & 0 & 1 & 1
+\end{bmatrix}\in\mathbf{Q}^{3,5}
+\]
+
+\end_inset
+
+we have the reduced echelon form
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+matrix [matrix of math nodes,              
+\end_layout
+
+\begin_layout Plain Layout
+
+left delimiter  = (,              
+\end_layout
+
+\begin_layout Plain Layout
+
+right delimiter = ),              
+\end_layout
+
+\begin_layout Plain Layout
+
+column sep=2 mm,              
+\end_layout
+
+\begin_layout Plain Layout
+
+row sep=0.25 cm,
+\end_layout
+
+\begin_layout Plain Layout
+
+nodes in empty cells] (A) {              
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &1 & 0 & 
+\backslash
+dfrac{1}{2} & 
+\backslash
+dfrac{1}{2}  
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & 1 &2 &2 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+0 &0 & 0 &0 &0 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [blue, thick] (A-1-2.north west)--(A-1-2.south west)
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (A-1-3.south west)--(A-2-3.south west)--(A-2-5.south east);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+]
+\end_layout
+
+\end_inset
+
+.
+ There are two pivot positions so 
+\begin_inset Formula $\text{Rank}\left(A\right)=2$
+\end_inset
+
+.
+ When we multiply the matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ on the right with
+\begin_inset Formula 
+\[
+B=\begin{bmatrix}\begin{array}{cccrr}
+1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 1\\
+0 & 0 & 0 & -1 & -1
+\end{array}\end{bmatrix}\in\mathbf{Q}^{5,5}
+\]
+
+\end_inset
+
+we obtain 
+\begin_inset Formula 
+\[
+AB=\begin{bmatrix}0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}\in\mathbf{Q}^{3,5}
+\]
+
+\end_inset
+
+so 
+\begin_inset Formula $\text{Rank}\left(AB\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Equivalence of Matrices
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "Def:Equivalence-of-Matrices"
+
+\end_inset
+
+Two matrices 
+\begin_inset Formula $A,\, B\in\mathbb{F}^{n,m}$
+\end_inset
+
+ are said to be equivalent when there exist matrices 
+\begin_inset Formula $Q\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $Z\in GL_{m}\left(\mathbb{F}\right)$
+\end_inset
+
+ with 
+\begin_inset Formula $A=QBZ$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+As the name suggests, the equivalence of matrices is an equivalence relation
+ on the set 
+\begin_inset Formula $\mathbb{F}^{n,m}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Reflexivity:
+\series default
+ 
+\begin_inset Formula $A=QAZ$
+\end_inset
+
+ with 
+\begin_inset Formula $Q=I_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $Z=I_{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Symmetry:
+\series default
+ If 
+\begin_inset Formula $A=QBZ$
+\end_inset
+
+ then 
+\begin_inset Formula $B=Q^{-1}AZ^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Transitivity:
+\series default
+ If 
+\begin_inset Formula $A=Q_{1}BZ_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $B=Q_{2}CZ_{2}$
+\end_inset
+
+ then 
+\begin_inset Formula $A=\left(Q_{1}Q_{2}\right)C\left(Z_{2}Z_{1}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The equivalence class containing 
+\begin_inset Formula $A$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\[
+\left[A\right]=\left\{ QAZ\,:\, Q\in GL_{n}\left(\mathbb{F}\right)\text{ and }Z\in GL_{m}\left(\mathbb{F}\right)\right\} .
+\]
+
+\end_inset
+
+If Rank
+\begin_inset Formula $\left(A\right)=r$
+\end_inset
+
+, then by (1) of Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Properties-of-Rank"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{pmatrix}I_{r} & 0\\
+0 & 0
+\end{pmatrix}\in\left[A\right]
+\]
+
+\end_inset
+
+and therefore
+\begin_inset Formula 
+\[
+\left[\begin{pmatrix}I_{r} & 0\\
+0 & 0
+\end{pmatrix}\right]=\left[A\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The rank of 
+\begin_inset Formula $A$
+\end_inset
+
+ is thus determined completely, as the equivalence class 
+\begin_inset Formula $\left[A\right]$
+\end_inset
+
+ looks like the matrix
+\begin_inset Formula 
+\[
+\begin{pmatrix}I_{r} & 0\\
+0 & 0
+\end{pmatrix}\in\mathbb{F}^{n,m}
+\]
+
+\end_inset
+
+we call this the 
+\emph on
+normal form
+\emph default
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+ under the equivalence or 
+\emph on
+equivalence-normal form
+\emph default
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Since the equivalence relation partitions the set 
+\begin_inset Formula $\mathbb{F}^{n,m}$
+\end_inset
+
+ we obtain
+\begin_inset Formula 
+\[
+\mathbb{F}^{n,m}=\bigcup_{r=0}^{\min\left\{ n,m\right\} }\left[\begin{pmatrix}I_{r} & 0\\
+0 & 0
+\end{pmatrix}\right],
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\left[\begin{pmatrix}I_{r} & 0\\
+0 & 0
+\end{pmatrix}\right]\bigcap\left[\begin{pmatrix}I_{s} & 0\\
+0 & 0
+\end{pmatrix}\right]=\textrm{Ø},\quad\text{if }r\neq s.
+\]
+
+\end_inset
+
+There are 
+\begin_inset Formula $1+\min\left\{ n,m\right\} $
+\end_inset
+
+ equivalence classes of matrices in 
+\begin_inset Formula $\mathbb{F}^{n,m}$
+\end_inset
+
+ and the set
+\begin_inset Formula 
+\[
+\left\{ \begin{pmatrix}I_{r} & 0\\
+0 & 0
+\end{pmatrix}\in\mathbb{F}^{n,m}\,:\, r=0,1,\ldots,\min\left\{ n,m\right\} \right\} 
+\]
+
+\end_inset
+
+is a complete set of representatives.
+\end_layout
+
+\begin_layout Standard
+From Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Ring-of-Matrices"
+
+\end_inset
+
+ we know that 
+\begin_inset Formula $\left(\mathbb{F}^{n,n},+,\star\right)$
+\end_inset
+
+ is a (non-commutative) ring with unity.
+ For 
+\begin_inset Formula $n\ge2$
+\end_inset
+
+, there are in this ring non-trivial zero divisors as we have seen earlier.
+ Using the equivalent normal form, we can characterize these zero divisors:
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $A\in\mathbb{F}^{n,n}$
+\end_inset
+
+ is invertible, then 
+\begin_inset Formula $A$
+\end_inset
+
+ cannot be a zero divisor as follows from 
+\begin_inset Formula $AB=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $B=A^{-1}\star0=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $A\in\mathbb{F}^{n,n}\setminus\left\{ 0\right\} $
+\end_inset
+
+ is a zero divisor, 
+\begin_inset Formula $A$
+\end_inset
+
+ cannot be invertible.
+ So we have 
+\begin_inset Formula 
+\[
+1\le\text{Rank}\left(A\right)=r<n
+\]
+
+\end_inset
+
+ and the equivalent normal form of 
+\begin_inset Formula $A$
+\end_inset
+
+ is not equal to the identity matrix 
+\begin_inset Formula $I_{n}$
+\end_inset
+
+.
+ There are then matrices 
+\begin_inset Formula $Q,\, Z\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+, so that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+QAZ=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{r} & 0_{r,n-r}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{n-r,r} & 0_{n-r,n-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+For each matrix of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+V:=
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{r,r} & 0_{r,n-r}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+* & * 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\backslash
+in 
+\backslash
+mathbb{F}^{n,n}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+and 
+\begin_inset Formula $B:=ZV$
+\end_inset
+
+ one has
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+AB=Q^{-1}
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+I_{r} & 0_{r,n-r}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+0_{n-r,r} & 0_{n-r,n-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] 
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{c|c} 
+\end_layout
+
+\begin_layout Plain Layout
+
+0{r,r} & 0_{r,n-r}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ast & 
+\backslash
+ast 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] =0.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+If 
+\begin_inset Formula $V\neq0$
+\end_inset
+
+, then 
+\begin_inset Formula $B\neq0$
+\end_inset
+
+ because 
+\begin_inset Formula $Z$
+\end_inset
+
+ is invertible.
+ Thus the zero divisors are precisely the non-invertible matrices.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exercises
+\end_layout
+
+\begin_layout Standard
+(In the following exercises 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ is always a field.)
+\end_layout
+
+\begin_layout Enumerate
+Calculate the reduced echelon form for each of the following matrices:
+\begin_inset Formula 
+\[
+A=\begin{bmatrix}1 & 2 & 3\\
+2 & 4 & 48
+\end{bmatrix}\in\mathbf{Q}^{2,3},\quad B=\begin{bmatrix}\begin{array}{cr}
+1 & i\\
+i & -1
+\end{array}\end{bmatrix}\in\mathbf{C}^{2,2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+C=\begin{bmatrix}\begin{array}{cr}
+1 & i\\
+i & 1
+\end{array}\end{bmatrix}\in\mathbf{C}^{2,2},\quad D=\begin{bmatrix}\begin{array}{ccrc}
+1 & i & -i & 0\\
+0 & 0 & 0 & 1\\
+5 & 0 & -6i & 0\\
+0 & 1 & 0 & 0
+\end{array}\end{bmatrix}\in\mathbf{C}^{4,4}.
+\]
+
+\end_inset
+
+Specify the elementary matrices used.
+ Is any one of the matrices 
+\begin_inset Formula $A,\, B,\, C,\, D$
+\end_inset
+
+ invertible? If yes, then calculate the corresponding inverse of the product
+ of the elementary matrices.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $A=\begin{bmatrix}\alpha & \beta\\
+\gamma & \delta
+\end{bmatrix}\in\mathbb{F}^{2,2}$
+\end_inset
+
+with 
+\begin_inset Formula $\alpha\delta-\beta\gamma\neq0$
+\end_inset
+
+.
+ Compute the echelon form of 
+\begin_inset Formula $A$
+\end_inset
+
+ and determine with the help of this calculation, a formula for 
+\begin_inset Formula $A^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Consider the matrix
+\begin_inset Formula 
+\[
+A=\begin{bmatrix}\frac{t+1}{t-1} & \frac{t-1}{t^{2}}\\
+\frac{t^{2}}{t+1} & \frac{t-1}{t+1}
+\end{bmatrix}\in\left(\mathbb{F}\left(t\right)\right)^{2,2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbb{F}\left(t\right)$
+\end_inset
+
+ is the field of rational functions.
+ Investigate If 
+\begin_inset Formula $A$
+\end_inset
+
+ is invertible.
+ Determine if appropriate 
+\begin_inset Formula $A^{-1}$
+\end_inset
+
+ and check your result by calculating 
+\begin_inset Formula $A^{-1}A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Show that 
+\begin_inset Formula $A\in\mathbb{F}^{n,n}$
+\end_inset
+
+ is invertible iff the echelon form the matrix 
+\begin_inset Formula $\left[A\ I_{n}\right]\in\mathbb{F}^{n,2n}$
+\end_inset
+
+ has the form 
+\begin_inset Formula $\left[I_{n}\ A^{-1}\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+(The inverse of a matrix can therefore be calculated by transforming the
+ matrix 
+\begin_inset Formula $\left[A\ I_{n}\right]$
+\end_inset
+
+ to its reduced echelon form.
+\end_layout
+
+\begin_layout Enumerate
+Prove Lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Lemma:Invertibility-and-homogeneous-system"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Calculate the 
+\begin_inset Formula $LU$
+\end_inset
+
+ decomposition of the matrices
+\begin_inset Formula 
+\[
+A=\begin{bmatrix}1 & 2 & 3 & 0\\
+4 & 0 & 0 & 1\\
+5 & 0 & 6 & 0\\
+0 & 1 & 0 & 0
+\end{bmatrix},\quad B=\begin{bmatrix}\begin{array}{rrrr}
+2 & 0 & -2 & 0\\
+-4 & 0 & 4 & -1\\
+0 & -1 & -1 & -2\\
+0 & 0 & 1 & 1
+\end{array}\end{bmatrix}\in\mathbf{R}^{4,4}.
+\]
+
+\end_inset
+
+Determine whether the matrices are invertible and compute where appropriate,
+ the inverse using the 
+\begin_inset Formula $LU$
+\end_inset
+
+ decomposition.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $H$
+\end_inset
+
+ be the 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ 
+\emph on
+Hilbert matrix.
+ 
+\emph default
+Calculate
+\emph on
+ 
+\emph default
+the rank of 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ Does there exist an 
+\begin_inset Formula $LU$
+\end_inset
+
+ decomposition with 
+\begin_inset Formula $P=I_{4}$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Enumerate
+Calculate the rank of the matrix
+\begin_inset Formula 
+\[
+\begin{bmatrix}\begin{array}{rrc}
+0 & \alpha & \beta\\
+-\alpha & 0 & \gamma\\
+-\beta & -\gamma & 0
+\end{array}\end{bmatrix}\in\mathbf{R}^{3,3}
+\]
+
+\end_inset
+
+depending on 
+\begin_inset Formula $\alpha,\,\beta,\,\gamma\in\mathbf{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $A,\, B\in\mathbb{F}^{n,n}$
+\end_inset
+
+.
+ Show that
+\begin_inset Formula 
+\[
+\text{Rank\,}\left(A\right)+\text{Rank}\,\left(B\right)\le\text{Rank}\,\left(\begin{bmatrix}A & C\\
+0 & B
+\end{bmatrix}\right)
+\]
+
+\end_inset
+
+for all 
+\begin_inset Formula $C\in\mathbb{F}^{n,n}$
+\end_inset
+
+.
+ Think about when this inequality is strict or when equality holds.
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $a,\, b,\, c\in\mathbf{R}^{n,1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Calculate Rank
+\begin_inset Formula $\left(ba^{T}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Let now 
+\begin_inset Formula $M\left(a,\, b\right):=ba^{T}-ab^{T}.$
+\end_inset
+
+ Show the following:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $M\left(a,\, b\right)=-M\left(b,\, a\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $M\left(a,\, b\right)c+M\left(b,\, c\right)a+M\left(c,\, a\right)b=0.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $M\left(\lambda a+\mu b,\, c\right)=\lambda M\left(a,\, c\right)+\mu M\left(b,\, c\right)$
+\end_inset
+
+ for 
+\begin_inset Formula $\lambda,\,\mu\in\mathbf{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Rank
+\begin_inset Formula $\left(M\left(a,\, b\right)\right)=0$
+\end_inset
+
+ if and only if there exist 
+\begin_inset Formula $\lambda,\,\mu\in\mathbf{R}$
+\end_inset
+
+ with 
+\begin_inset Formula $\lambda\neq0$
+\end_inset
+
+ or 
+\begin_inset Formula $\mu\neq0$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda a+\mu b=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Rank
+\begin_inset Formula $\left(M\left(a,\, b\right)\right)\in\left\{ 0,2\right\} .$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Chapter
+Linear Systems of Equations
+\end_layout
+
+\begin_layout Standard
+The solution of linear systems of equations is a central problem of linear
+ algebra.
+ Such systems arise in many scientific and engineering applications, such
+ examples as, in the discretization of differential equations or the linearizati
+on of a nonlinear equation.
+ Thus, the focus of this besides Linear Algebra is also of great g eneral
+ interest.
+\end_layout
+
+\begin_layout Section
+Linear Sytems
+\end_layout
+
+\begin_layout Definition
+A 
+\emph on
+Linear System of Equations 
+\emph default
+with 
+\begin_inset Formula $n$
+\end_inset
+
+ equations for 
+\begin_inset Formula $m$
+\end_inset
+
+ 
+\emph on
+unknowns
+\emph default
+ 
+\begin_inset Formula $x_{1},\ldots,x_{m}$
+\end_inset
+
+has the form
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{ccccccccl}
+a_{11}x_{1} & + & a_{12}x_{2} & + & \ldots & + & a_{1m}x_{m} & = & b_{1}\\
+a_{21}x_{1} & + & a_{22}x_{2} & + & \ldots & + & a_{2m}x_{m} & = & b_{2}\\
+\vdots &  & \vdots &  & \ddots &  & \vdots &  & \vdots\\
+a_{n1}x_{1} & + & a_{n2}x_{2} & + & \ldots & + & a_{nm}x_{m} & = & b_{n}
+\end{array}\label{eq:Linear-System}
+\end{equation}
+
+\end_inset
+
+or
+\begin_inset Formula 
+\begin{equation}
+A\x=\b.\label{eq:Matrix-Linear-System}
+\end{equation}
+
+\end_inset
+
+where the 
+\emph on
+Coefficient Matrix
+\emph default
+ 
+\begin_inset Formula $A=\left[a_{ij}\right]\in\mathbb{F}^{n,m}$
+\end_inset
+
+ and the 
+\emph on
+right side
+\emph default
+ 
+\begin_inset Formula $\b=\left[b_{l}\right]\in\mathbb{F}^{n,1}$
+\end_inset
+
+is given.
+ 
+\end_layout
+
+\begin_layout Definition
+If 
+\begin_inset Formula $b=0$
+\end_inset
+
+, the system is called a 
+\emph on
+linear homogeneous system
+\emph default
+ , otherwise 
+\emph on
+inhomogeneous
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Definition
+Each 
+\begin_inset Formula $\x\in\mathbb{F}^{m,1}$
+\end_inset
+
+ which satisfies 
+\begin_inset Formula $A\x=\b$
+\end_inset
+
+ is called a 
+\emph on
+solution
+\emph default
+ of the linear system.
+ The set of all solutions is called the 
+\emph on
+solution
+\emph default
+ 
+\emph on
+set
+\emph default
+ of the linear system.
+ We denote this set by 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We now characterize the solution set 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+ of the linear system 
+\begin_inset Formula $A\x=\b$
+\end_inset
+
+ using the solution set 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+ of the associated homogeneous system of linear equations 
+\begin_inset Formula $A\x=\mathbf{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "Lemma:Solution-Set"
+
+\end_inset
+
+Let 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ and 
+\begin_inset Formula $\b\in\mathbb{F}^{n,1}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\b\right)\neq\varnothing$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\hat{x}\in\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+ then
+\begin_inset Formula 
+\[
+\mathscr{\ensuremath{L}}\left(A,\b\right)=\hat{x}+\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right):=\left\{ \hat{x}+z\,:\, z\in\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $\hat{z}\in\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $\hat{x}+\hat{z}\in\hat{x}+\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+and
+\begin_inset Formula 
+\[
+A\left(\hat{x}+\hat{z}\right)=A\hat{x}+A\hat{z}=\b+\mathbf{0}=\b
+\]
+
+\end_inset
+
+so 
+\begin_inset Formula $\hat{x}+\hat{z}\in\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+ resulting in 
+\begin_inset Formula $\hat{x}+\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)\subseteq\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+If now 
+\begin_inset Formula $\widehat{x_{1}}\in\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+ and we let 
+\begin_inset Formula $\hat{z}:=\widehat{x_{1}}-\hat{x},$
+\end_inset
+
+ then
+\begin_inset Formula 
+\[
+A\hat{z}=A\widehat{x_{1}}-A\hat{x}=\b-\b=\mathbf{0},
+\]
+
+\end_inset
+
+so 
+\begin_inset Formula $\hat{z}\in\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+ and thus 
+\begin_inset Formula $\widehat{x_{1}}=\hat{x}+\hat{z}\in\hat{x}+\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+ resulting in 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\b\right)\subseteq\hat{x}+\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We now look at the set 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+ more closely.
+ It is obvious that 
+\begin_inset Formula $A\star\mathbf{0}=\mathbf{0}$
+\end_inset
+
+ for 
+\begin_inset Formula $\mathbf{0}\in\mathbb{F}^{m,1}$
+\end_inset
+
+ and therefore 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)\neq\varnothing$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\hat{z}\in\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+ then 
+\begin_inset Formula $A\left(\lambda\cdot\hat{z}\right)=\lambda\cdot\left(A\hat{z}\right)=\lambda\cdot\mathbf{0}=\mathbf{0}$
+\end_inset
+
+ so 
+\begin_inset Formula $\lambda\cdot\hat{z}\in\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+.
+ Thus for each 
+\begin_inset Formula $\hat{z}\in\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+ all scalar multiples of 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+ belong to 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+.
+ Also if 
+\begin_inset Formula $\widehat{z_{1}},\widehat{z_{2}}\in\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $A\left(\widehat{z_{1}}+\widehat{z_{2}}\right)=A\widehat{z_{1}}+A\widehat{z_{2}}=\mathbf{0}+\mathbf{0}=\mathbf{0}$
+\end_inset
+
+, so 
+\begin_inset Formula $\widehat{z_{1}}+\widehat{z_{2}}\in\mathscr{\ensuremath{L}}\left(A,\mathbf{0}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "Lemma:Transformation-Linear-System"
+
+\end_inset
+
+Let 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+, 
+\begin_inset Formula $\b\in\mathbb{F}^{n,1}$
+\end_inset
+
+ and 
+\begin_inset Formula $S\in\mathbb{F}^{n,n}$
+\end_inset
+
+, then 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\b\right)\subseteq\mathscr{\ensuremath{L}}\left(SA,S\b\right)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $S$
+\end_inset
+
+ is invertible then 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\b\right)=\mathscr{\ensuremath{L}}\left(SA,S\b\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+If 
+\begin_inset Formula $\hat{x}\in\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $SA\hat{x}=S\b$
+\end_inset
+
+ so also 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\hat{x}\in\mathscr{\ensuremath{L}}\left(SA,S\b\right)$
+\end_inset
+
+ and therefore 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\b\right)\subseteq\mathscr{\ensuremath{L}}\left(SA,S\b\right)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $S$
+\end_inset
+
+ is invertible and 
+\begin_inset Formula $\hat{y}\in\mathscr{\ensuremath{L}}\left(SA,S\b\right),$
+\end_inset
+
+ so 
+\begin_inset Formula $SA\hat{y}=S\b$
+\end_inset
+
+, it follows 
+\begin_inset Formula $S^{-1}\left(SA\hat{y}\right)=\b$
+\end_inset
+
+ and therefore 
+\begin_inset Formula $A\hat{y}=\b$
+\end_inset
+
+.
+ It follows that 
+\begin_inset Formula $\hat{y}\in\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(SA,S\b\right)\subseteq\mathscr{\ensuremath{L}}\left(A,\b\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let a linear system of the form 
+\begin_inset Formula $A\x=\b$
+\end_inset
+
+ be given .
+ By Theorem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Thm:Row-Echelon-Form"
+
+\end_inset
+
+ we can find a matrix 
+\begin_inset Formula $S\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+, such that 
+\begin_inset Formula $SA$
+\end_inset
+
+ is in reduced echelon form.
+ Let 
+\begin_inset Formula $\widetilde{\b}=\left[\widetilde{b_{ij}}\right]:=S\b$
+\end_inset
+
+, so that 
+\begin_inset Formula $\mathscr{\ensuremath{L}}\left(A,\b\right)=\mathscr{\ensuremath{L}}\left(SA,\widetilde{\b}\right)$
+\end_inset
+
+ by Lemma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Lemma:Transformation-Linear-System"
+
+\end_inset
+
+ and the linear system of equations 
+\begin_inset Formula $SA\x=\widetilde{\b}$
+\end_inset
+
+ looks as below:
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+Let 
+\begin_inset Formula $j_{1},j_{2},\ldots,j_{r}$
+\end_inset
+
+ be the pivot positions of 
+\begin_inset Formula $SA,$
+\end_inset
+
+ so Rank
+\begin_inset Formula $\left(A\right)=r$
+\end_inset
+
+, and let the permutation matrix 
+\begin_inset Formula $P^{T}\in\mathbb{F}^{m,m}$
+\end_inset
+
+ be given by
+\begin_inset Formula 
+\begin{equation}
+P^{T}:=\left[\e_{j_{1}},\e_{j_{2}},\ldots,\e_{j_{r}},\e_{1},\ldots,\e_{j_{1}-1},\e_{j_{1}+1},\ldots,\e_{j_{2}-1},\e_{j_{2}+1},\ldots,\e_{m}\right].\label{eq:4.1.3}
+\end{equation}
+
+\end_inset
+
+Then
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+widetilde A:=SAP^T=
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+left[ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{array}{l|l} I_{r} & 
+\backslash
+widetilde{A}_{12}
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 0_{n-r,r} & 0_{n-r,m-r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{array} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+right] ,
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+] 
+\end_layout
+
+\end_inset
+
+ for a matrix 
+\begin_inset Formula $\widetilde{A}_{12}\in\mathbb{F}^{r,m-r}$
+\end_inset
+
+.
+ In case 
+\begin_inset Formula $r=m,$
+\end_inset
+
+ 
+\begin_inset Formula $\widetilde{A}=\left[\ \right]$
+\end_inset
+
+.
+ Thus the right multiplication of 
+\begin_inset Formula $SA$
+\end_inset
+
+ with 
+\begin_inset Formula $P^{T}$
+\end_inset
+
+ brings the pivot positions ``forward''.
+ (This results in the simplification of the presentation, but may be ommitmted
+ in a ``practical'' calculation.
+ Since 
+\begin_inset Formula $P^{T}P=I_{m}$
+\end_inset
+
+, we can write the linear system of equations 
+\begin_inset Formula $SA\x=\widetilde{\b}$
+\end_inset
+
+ as 
+\begin_inset Formula $SAP^{T}P\x=\widetilde{\b}$
+\end_inset
+
+ or 
+\begin_inset Formula $\widetilde{A}\y=\widetilde{\b}$
+\end_inset
+
+.
+ With 
+\begin_inset Formula $\y=P\x$
+\end_inset
+
+ this looks like 
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+The left multiplication of 
+\begin_inset Formula $\x$
+\end_inset
+
+ by 
+\begin_inset Formula $P$
+\end_inset
+
+ amounts to renumbering the unknowns 
+\begin_inset Formula $x_{1},\ldots,x_{m}$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $\widehat{\y}\in\mathscr{L}\left(\widetilde{A},\widetilde{\b}\right)$
+\end_inset
+
+ if and only if
+\begin_inset Formula 
+\[
+\widehat{\x}:=P^{T}\in\mathscr{L}\left(SA,\widetilde{\b}\right)=\mathscr{L}\left(SA,S\b\right)=\mathscr{L}\left(A,\b\right).
+\]
+
+\end_inset
+
+Whether the linear system 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Matrix-Linear-System"
+
+\end_inset
+
+ has solutions depends on the rank of the 
+\emph on
+augmented matrix
+\emph default
+ 
+\begin_inset Formula $\left[\widetilde{A},\widetilde{\b}\right]\in\mathbb{F}^{n,m+1}$
+\end_inset
+
+ which is produced by ``annexing'' 
+\begin_inset Formula $\widetilde{\b}$
+\end_inset
+
+ to 
+\begin_inset Formula $\widetilde{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now Rank
+\begin_inset Formula $\left(\widetilde{A}\right)\le\text{Rank}\left(\left[\widetilde{A},\widetilde{\b}\right]\right)$
+\end_inset
+
+, with equality if and only if 
+\begin_inset Formula $\widetilde{b_{r+1}}=\cdots=\widetilde{b_{n}}=0$
+\end_inset
+
+.
+ If Rank
+\begin_inset Formula $\left(\widetilde{A}\right)<\text{Rank}\left(\left[\widetilde{A},\widetilde{\b}\right]\right)$
+\end_inset
+
+, then at least one of the 
+\begin_inset Formula $\widetilde{b_{r+1}},\cdots,\widetilde{b_{n}}$
+\end_inset
+
+ is not zero and the linear system of equations 
+\begin_inset Formula $\widetilde{A}\y=\widetilde{\b}$
+\end_inset
+
+ cannot have a solution as all entries in the rows 
+\begin_inset Formula $r+1,\ldots,n$
+\end_inset
+
+ of 
+\begin_inset Formula $\widetilde{A}$
+\end_inset
+
+ are 0.
+\end_layout
+
+\begin_layout Standard
+On the other hand, Rank
+\begin_inset Formula $\left(\widetilde{A}\right)=\text{Rank}\left(\left[\widetilde{A},\widetilde{\b}\right]\right)$
+\end_inset
+
+ implies 
+\begin_inset Formula $\widetilde{b_{r+1}}=\cdots=\widetilde{b_{n}}=0$
+\end_inset
+
+ and Equation can be written as 
+\begin_inset Formula 
+\[
+\begin{bmatrix}y_{1}\\
+\vdots\\
+y_{r}
+\end{bmatrix}=\begin{bmatrix}\widetilde{b_{1}}\\
+\vdots\\
+\widetilde{b_{r}}
+\end{bmatrix}-\widetilde{A_{12}}\begin{bmatrix}y_{r+1}\\
+\vdots\\
+y_{n}
+\end{bmatrix}.
+\]
+
+\end_inset
+
+From this display 
+\begin_inset Formula 
+\[
+\left[\widetilde{b_{1}},\ldots\widetilde{b_{r}},0,\ldots,0\right]^{T}=\b\in\mathscr{L}\left(\widetilde{A},\widetilde{\b}\right)\neq\varnothing.
+\]
+
+\end_inset
+
+To determine the set 
+\begin_inset Formula $\mathscr{L}\left(\widetilde{A},\mathbf{0}\right)$
+\end_inset
+
+ we set 
+\begin_inset Formula $\widetilde{b_{1}}=\cdots=\widetilde{b_{r}}=0$
+\end_inset
+
+, from which
+\begin_inset Formula 
+\begin{eqnarray}
+\mathscr{L}\left(\widetilde{A},\mathbf{0}\right) & = & \left\{ \left[\widehat{y_{1}},\ldots,\widehat{y_{m}}\right]^{T}\,:\,\widehat{y_{r+1}},\ldots,\widehat{y_{m}}\textrm{ are arbitrary and}\right.\\
+ &  & \qquad\qquad\left.\left[\widehat{y_{1}},\ldots,\widehat{y_{r}}\right]^{T}=\mathbf{0}-\widetilde{A_{12}}\left[\widehat{y_{r+1}},\ldots,\widehat{y_{m}}\right]^{T}\right\} .\label{eq:4.1.4}
+\end{eqnarray}
+
+\end_inset
+
+If 
+\begin_inset Formula $r=m$
+\end_inset
+
+ then 
+\begin_inset Formula $\widetilde{A_{12}}$
+\end_inset
+
+=
+\begin_inset Formula $\left[\ \right]$
+\end_inset
+
+, 
+\begin_inset Formula $\mathscr{L}\left(\widetilde{A},\mathbf{0}\right)=\left\{ \mathbf{0}\right\} $
+\end_inset
+
+ and thus 
+\begin_inset Formula $\left|\mathscr{L}\left(\widetilde{A},\,\widetilde{\b}\right)\right|=1$
+\end_inset
+
+, i.e., the solution of 
+\begin_inset Formula $\widetilde{A}\y=\widetilde{\b}$
+\end_inset
+
+ is uniquely determined.
+\end_layout
+
+\begin_layout Example
+For the augmented coefficient matrix
+\begin_inset Formula 
+\[
+\left[\widetilde{A},\,\widetilde{\b}\right]=\begin{bmatrix}1 & 0 & 3 & \widetilde{b_{1}}\\
+0 & 1 & 4 & \widetilde{b_{2}}\\
+0 & 0 & 0 & \widetilde{b_{3}}
+\end{bmatrix}\in\mathbf{Q}^{3,4}
+\]
+
+\end_inset
+
+Rank
+\begin_inset Formula $\left(\widetilde{A}\right)=\text{Rank}\left(\left[\widetilde{A},\,\widetilde{\b}\right]\right)$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $\widetilde{b_{3}}=0$
+\end_inset
+
+, so the linear system of equations 
+\begin_inset Formula $\widetilde{A}\y=\widetilde{\b}$
+\end_inset
+
+ can be written as
+\begin_inset Formula 
+\[
+\begin{bmatrix}y_{1}\\
+y_{2}
+\end{bmatrix}=\begin{bmatrix}\widetilde{b_{1}}\\
+\widetilde{b_{2}}
+\end{bmatrix}-\begin{bmatrix}3\\
+4
+\end{bmatrix}\left[y_{3}\right].
+\]
+
+\end_inset
+
+Thus 
+\begin_inset Formula $\left[\widetilde{b_{1}},\widetilde{b_{2}},0\right]^{T}\in\mathscr{L}\left(\widetilde{A},\,\widetilde{\b}\right)$
+\end_inset
+
+ and
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathscr{L}\left(\widetilde{A},\mathbf{0}\right) & = & \left\{ \left[\widehat{y_{1}},\widehat{y_{2}},\widehat{y_{3}}\right]^{T}\,:\,\widehat{y_{3}}\textrm{ is arbitrary and}\right.\\
+ &  & \qquad\qquad\left.\left[\widehat{y_{1}},\widehat{y_{2}}\right]^{T}=\mathbf{0}-\begin{bmatrix}3\\
+4
+\end{bmatrix}\left[\widehat{y_{3}}\right]\right\} .
+\end{eqnarray*}
+
+\end_inset
+
+If on the otherhand 
+\begin_inset Formula $\widetilde{b_{3}}\neq0$
+\end_inset
+
+, 
+\begin_inset Formula $\mathscr{L}\left(\widetilde{A},\,\widetilde{\b}\right)=\varnothing$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+Let 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ and 
+\begin_inset Formula $\b\in\mathbb{F}^{n,1}$
+\end_inset
+
+, Then 
+\begin_inset Formula $\mathscr{L}\left(A,\b\right)\neq\varnothing$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $\text{Rank}\left(A\right)=\text{Rank}\left(\left[A,\,\b\right]\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+This follows from above and the identities Rank
+\begin_inset Formula $\left(\widetilde{A}\right)=\text{Rank}\left(A\right)$
+\end_inset
+
+ and Rank
+\begin_inset Formula $\left(\left[\widetilde{A},\,\widetilde{\b}\right]\right)=\text{Rank}\left(\left[A,\,\b\right]\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can now summarize the above discussion, and give an algorithm (
+\emph on
+Gaussian Algorithm
+\emph default
+) for the solution of a linear system of equations 
+\begin_inset Formula $A\x=\b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+Given 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ and 
+\begin_inset Formula $\b\in\mathbb{F}^{n,1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+(1) Apply the Gaussian algorithm to compute 
+\begin_inset Formula $S\in GL_{n}\left(\mathbb{F}\right)$
+\end_inset
+
+ such that 
+\begin_inset Formula $SA$
+\end_inset
+
+ is in reduced echelon form.
+ Compute 
+\begin_inset Formula $\widetilde{\b}=S\b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+(2a) If 
+\begin_inset Formula $\text{Rank}\left(SA\right)<\text{Rank}\left(\left[SA,\,\widetilde{\b}\right]\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $\mathscr{L}\left(SA,\widetilde{\b}\right)=\mathscr{L}\left(A,\b\right)=\varnothing$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Algorithm
+(2b) If 
+\begin_inset Formula $r=\text{Rank}\left(A\right)=\text{Rank}\left(\left[SA,\,\widetilde{\b}\right]\right)$
+\end_inset
+
+ consider 
+\begin_inset Formula $\widetilde{A}:=SAP^{T}$
+\end_inset
+
+ with 
+\begin_inset Formula $P^{T}$
+\end_inset
+
+ as in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:4.1.3"
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Then 
+\begin_inset Formula $\widetilde{\b}\in\mathscr{L}\left(\widetilde{A},\,\widetilde{\b}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathscr{L}\left(\widetilde{A},\,\widetilde{\b}\right)=\widetilde{\b}+\mathscr{L}\left(\widetilde{A},\,\mathbf{0}\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $\mathscr{L}\left(\widetilde{A},\,\mathbf{0}\right)$
+\end_inset
+
+ is calculated using 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:4.1.4"
+
+\end_inset
+
+ and 
+\begin_inset Formula $\mathscr{L}\left(A,\b\right)=\left\{ P^{T}\widehat{\y}\,:\,\widehat{\y}\in\mathscr{L}\left(\widetilde{A},\,\widetilde{\b}\right)\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+For 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ and 
+\begin_inset Formula $\b\in\mathbb{F}^{n,1}$
+\end_inset
+
+ the following statements hold for the solvability of the linear system
+ of equations 
+\begin_inset Formula $A\x=\b$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Corollary
+(1) If 
+\begin_inset Formula $\text{Rank}\left(A\right)<\text{Rank}\left(\left[A,\,\b\right]\right)$
+\end_inset
+
+ then 
+\begin_inset Formula $\mathscr{L}\left(A,\b\right)=\varnothing$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+(2) If 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\text{Rank}\left(A\right)=\text{Rank}\left(\left[A,\,\b\right]\right)=m$
+\end_inset
+
+, then 
+\begin_inset Formula $\left|\mathscr{L}\left(A,\b\right)\right|=1$
+\end_inset
+
+ (i.e., there is a unique solution).
+\end_layout
+
+\begin_layout Corollary
+(3) 
+\begin_inset Formula $\text{Rank}\left(A\right)=\text{Rank}\left(\left[A,\,\b\right]\right)<m$
+\end_inset
+
+, then there are many solutions.
+ If the field 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ has infinitely many elements (e.g., 
+\begin_inset Formula $\mathbb{F}=\mathbf{Q}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbb{F}=\mathbf{R}$
+\end_inset
+
+, or 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbb{F}=\mathbf{C}$
+\end_inset
+
+) then also there are infinitely many different solutions.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\end_layout
+
+\begin_layout Standard
+The last case in Corollary we will be able to better characterize, when
+ we introduce the concept of dimension later.
+\end_layout
+
+\begin_layout Example
+Let 
+\begin_inset Formula $\mathbb{F}=\mathbf{Q}$
+\end_inset
+
+.
+ Discuss the solutions of the linear system of equations 
+\begin_inset Formula $A\x=\b$
+\end_inset
+
+ with
+\begin_inset Formula 
+\[
+A=\begin{bmatrix}1 & 2 & 2 & 1\\
+0 & 1 & 0 & 3\\
+1 & 0 & 3 & 0\\
+2 & 3 & 5 & 4\\
+1 & 1 & 3 & 3
+\end{bmatrix},\quad\b=\begin{bmatrix}1\\
+0\\
+2\\
+3\\
+2
+\end{bmatrix}.
+\]
+
+\end_inset
+
+
+\series bold
+Soln.
+
+\series default
+ We build the augmented matrix of coefficients and apply the Gauusian algorithm
+ to bring 
+\begin_inset Formula $A$
+\end_inset
+
+ in the reduced echelon form:
+\begin_inset Formula 
+\begin{eqnarray*}
+\left[A,\b\right] & \rightsquigarrow & \begin{bmatrix}1 & 2 & 2 & 1 & 1\\
+0 & 1 & 0 & 3 & 0\\
+1 & 0 & 3 & 0 & 2\\
+2 & 3 & 5 & 4 & 3\\
+1 & 1 & 3 & 3 & 2
+\end{bmatrix}\rightsquigarrow\begin{bmatrix}1 & 2 & 2 & 1 & 1\\
+0 & 1 & 0 & 3 & 0\\
+0 & -2 & 1 & -1 & 1\\
+0 & -1 & 1 & 2 & 1\\
+0 & -1 & 1 & 2 & 1
+\end{bmatrix}\\
+ & \rightsquigarrow & \begin{bmatrix}1 & 2 & 2 & 1 & 1\\
+0 & 1 & 0 & 3 & 0\\
+0 & 0 & 1 & 5 & 1\\
+0 & 0 & 1 & 5 & 1\\
+0 & 0 & 1 & 5 & 1
+\end{bmatrix}\rightsquigarrow\begin{bmatrix}1 & 2 & 2 & 1 & 1\\
+0 & 1 & 0 & 3 & 0\\
+0 & 0 & 1 & 5 & 1\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}\\
+ & \rightsquigarrow & \begin{bmatrix}1 & 0 & 2 & -5 & 1\\
+0 & 1 & 0 & 3 & 0\\
+0 & 0 & 1 & 5 & 1\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}\rightsquigarrow\begin{bmatrix}1 & 0 & 0 & -15 & -1\\
+0 & 1 & 0 & 3 & 0\\
+0 & 0 & 1 & 5 & 1\\
+0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}=\left[SA\,\mid\widetilde{\b}\right].
+\end{eqnarray*}
+
+\end_inset
+
+As 
+\begin_inset Formula $\text{Rank}\left(SA\right)=\text{Rank}\left(\left[SA\,\mid\widetilde{\b}\right]\right)=3$
+\end_inset
+
+ a solution exists.
+ Moreover for the pivot columns 
+\begin_inset Formula $j_{i}=i,\, i=1,2,3$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $P=P^{T}=I_{4}$
+\end_inset
+
+ and 
+\begin_inset Formula $\widetilde{A}=SA$
+\end_inset
+
+.
+ The linear system of equations 
+\begin_inset Formula $SA\x=\widetilde{\b}$
+\end_inset
+
+ can be written as
+\begin_inset Formula 
+\[
+\begin{bmatrix}x_{1}\\
+x_{2}\\
+x_{3}
+\end{bmatrix}=\begin{bmatrix}\begin{array}{r}
+-1\\
+0\\
+1
+\end{array}\end{bmatrix}-\begin{bmatrix}\begin{array}{r}
+-15\\
+3\\
+5
+\end{array}\end{bmatrix}\left[x_{4}\right].
+\]
+
+\end_inset
+
+It follows that 
+\begin_inset Formula $\widetilde{\b}=\left[-1,0,1,0\right]^{T}\in\mathscr{L}\left(A,\b\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathscr{L}\left(A,\b\right)=\widetilde{\b}+\mathscr{L}\left(A,\mathbf{0}\right)$
+\end_inset
+
+, where
+\begin_inset Formula 
+\[
+\mathscr{L}\left(A,\mathbf{0}\right)=\left\{ \left[\widehat{x_{1}},\widehat{x_{2}},\widehat{x_{3}},\widehat{x_{4}}\right]^{T}\,:\,\widehat{x_{4}}\text{ is arbitrary and }\left[\widehat{x_{1}},\widehat{x_{2}},\widehat{x_{3}}\right]^{T}=-\left[-15,3,5\right]^{T}\widehat{x_{4}}.\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exercises
+\end_layout
+
+\begin_layout Enumerate
+Find a field 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+, numbers 
+\begin_inset Formula $n,m\in\mathbf{N}$
+\end_inset
+
+ and matrices 
+\begin_inset Formula $A\in\mathbb{F}^{n,m},\, S\in\mathbb{F}^{n,n}$
+\end_inset
+
+ and 
+\begin_inset Formula $\b\in\mathbb{F}^{n,1}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathscr{L}\left(A,\b\right)\neq\mathscr{L}\left(SA,S\b\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Determine 
+\begin_inset Formula $\mathscr{L}\left(A,\b\right)$
+\end_inset
+
+ for the following 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $\b$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{eqnarray*}
+A & = & \begin{bmatrix}\begin{array}{rrr}
+1 & 1 & 1\\
+1 & 2 & -1\\
+1 & -1 & 6
+\end{array}\end{bmatrix}\in\mathbf{R}^{3,3},\quad\b=\begin{bmatrix}\begin{array}{r}
+1\\
+-2\\
+3
+\end{array}\end{bmatrix}\in\mathbf{R}^{3,1},\\
+A & = & \begin{bmatrix}\begin{array}{rrrr}
+1 & 1 & 1 & 0\\
+1 & 2 & -1 & -1\\
+1 & -1 & 6 & 2
+\end{array}\end{bmatrix}\in\mathbf{R}^{3,4},\quad\b=\begin{bmatrix}\begin{array}{r}
+1\\
+-2\\
+3
+\end{array}\end{bmatrix}\in\mathbf{R}^{3,1},\\
+A & = & \begin{bmatrix}\begin{array}{rrr}
+1 & 1 & 1\\
+1 & 2 & -1\\
+1 & -1 & 6\\
+1 & 1 & 1
+\end{array}\end{bmatrix}\in\mathbf{R}^{4,3},\quad\b=\begin{bmatrix}\begin{array}{r}
+1\\
+-2\\
+3\\
+1
+\end{array}\end{bmatrix}\in\mathbf{R}^{4,1},\\
+A & = & =\begin{bmatrix}\begin{array}{rrr}
+1 & 1 & 1\\
+1 & 2 & -1\\
+1 & -1 & 6\\
+1 & 1 & 1
+\end{array}\end{bmatrix}\in\mathbf{R}^{4,3},\quad\b=\begin{bmatrix}\begin{array}{r}
+1\\
+-2\\
+3\\
+0
+\end{array}\end{bmatrix}\in\mathbf{R}^{4,1}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\alpha\in\mathbf{Q}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+A=\begin{bmatrix}\begin{array}{rrr}
+3 & 2 & 1\\
+1 & 1 & 1\\
+2 & 1 & 0
+\end{array}\end{bmatrix}\in\mathbf{Q}^{3,3},\quad\b=\begin{bmatrix}\begin{array}{r}
+6\\
+3\\
+\alpha
+\end{array}\end{bmatrix}\in\mathbf{Q}^{3,1}.
+\]
+
+\end_inset
+
+Determine the solutions of the linear system of equations 
+\begin_inset Formula $A\x=\mathbf{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $A\x=\b_{\alpha}$
+\end_inset
+
+(in terms of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ be a field, 
+\begin_inset Formula $m,n,s\in\mathbf{N},$
+\end_inset
+
+ 
+\begin_inset Formula $A\in\mathbb{F}^{n,m}$
+\end_inset
+
+ and 
+\begin_inset Formula $B\in\mathbb{F}^{m,s}$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $i=1,\ldots,s$
+\end_inset
+
+ denote by 
+\begin_inset Formula $\b_{i}$
+\end_inset
+
+ the 
+\begin_inset Formula $i$
+\end_inset
+
+-th column of 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Show that the system of linear equations 
+\begin_inset Formula $AX=B$
+\end_inset
+
+ has at least one solution 
+\begin_inset Formula $X\in\mathbb{F}^{m,s}$
+\end_inset
+
+ if
+\begin_inset Formula 
+\[
+\text{Rank}\left(A\right)=\text{Rank}\left(\left[A,\b_{1}\right]\right)=\text{Rank}\left(\left[A,\b_{2}\right]\right)=\cdots=\text{Rank}\left(\left[A,\b_{s}\right]\right).
+\]
+
+\end_inset
+
+Under what conditions is it unique?
+\end_layout
+
+\begin_layout Enumerate
+Let 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+ be a field.
+ Given
+\begin_inset Formula 
+\[
+A=\begin{bmatrix}q_{1} & p_{1} & 0 & 0 & \cdots & 0\\
+q_{2} & 0 & p_{2} & 0 & \cdots & 0\\
+0 & q_{3} & 0 & p_{3} & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots & \ddots & \vdots\\
+0 & \cdots & 0 & q_{n-1} & 0 & p_{n-1}\\
+0 & \cdots & 0 & 0 & q_{n} & p_{n}
+\end{bmatrix}\in\mathbb{F}^{n,n}\quad\b=\begin{bmatrix}b_{1}\\
+\vdots\\
+b_{n}
+\end{bmatrix}\in\mathbb{F}^{n,1}
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $p_{i},\, q_{i}\neq0$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ Determine a recursive formula for calculating the entries of the solution
+ of the linear system of equations 
+\begin_inset Formula $A\x=\b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Chapter
+Vector Spaces
 \end_layout
 
 \begin_layout Definition
